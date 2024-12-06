@@ -2,20 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: "Dots";
+    src: url("/fonts/dots.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-bold.ttc") format("truetype-collection");
+    font-weight: 700;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-bolditalic.ttc") format("truetype-collection");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-extralight.ttc") format("truetype-collection");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-extralightitalic.ttc") format("truetype-collection");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-light.ttc") format("truetype-collection");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-lightitalic.ttc") format("truetype-collection");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-regular.ttc") format("truetype-collection");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-italic.ttc") format("truetype-collection");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-semibold.ttc") format("truetype-collection");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sarasa";
+    src: url("/fonts/sarasa-semibolditalic.ttc") format("truetype-collection");
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* 使用 Sarasa 作为默认字体 */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: "Sarasa", sans-serif;
 }
