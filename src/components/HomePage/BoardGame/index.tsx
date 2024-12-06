@@ -1,11 +1,15 @@
 "use client";
 
-import GameList from "@/components/GameList";
 import dynamic from "next/dynamic";
 
 const ZdogShapes = dynamic(() => import("./ZdogShapes"), {
     loading: () => (
-        <div className="skeleton w-[80vw] h-[80vw] md:w-[80vh] md:h-[80vh] absolute right-1/2 lg:right-10 top-1/2 translate-x-1/2 lg:-translate-x-0 -translate-y-1/2" />
+        <div className="skeleton w-[80vw] h-[80vw] rounded-xl md:w-[80vh] md:h-[80vh] absolute right-1/2 lg:right-10 top-1/2 translate-x-1/2 lg:-translate-x-0 -translate-y-1/2" />
+    ),
+});
+const GameList = dynamic(() => import("@/components/GameList"), {
+    loading: () => (
+        <div className="skeleton w-auto h-[calc(100vh-5rem)] m-2 mt-[30vh]" />
     ),
 });
 
@@ -15,10 +19,10 @@ const BoardGame = () => (
             桌游
         </h2>
 
-        <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col">
-            <ZdogShapes className="w-[80vw] h-[80vw] md:w-[80vh] md:h-[80vh] absolute right-1/2 lg:right-10 top-1/2 translate-x-1/2 lg:-translate-x-0 -translate-y-1/2" />
+        <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col mt-[4rem] [&:not(.text-primary)]:text-neutral-content">
+            <ZdogShapes className="cursor-move w-[80vw] h-[80vw] md:w-[80vh] md:h-[80vh] absolute right-1/2 lg:right-10 top-1/2 translate-x-1/2 lg:-translate-x-0 -translate-y-1/2" />
 
-            <div className="absolute left-4 top-[30vh] [&]:text-5xl md:[&]:text-7xl">
+            <div className="absolute left-4 top-[30vh] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
                 <p>
                     <span className="text-primary">懂桌游</span>的桌游店
                 </p>
@@ -58,7 +62,8 @@ const BoardGame = () => (
                 <span className="size-7 rounded-full bg-primary" />
 
                 <p className="bg-neutral w-40 mb-2 p-2 rounded-lg">
-                    被多所大学包围, 耕耘桌游行业多年. 玩桌游的人开的桌游店,
+                    地址被多所大学包围, 主理人耕耘桌游行业多年.
+                    玩桌游的人开的桌游店,
                     <span className="text-primary"> 组局不等人!</span>
                 </p>
             </div>

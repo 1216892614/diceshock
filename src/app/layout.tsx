@@ -16,14 +16,14 @@ export default function RootLayout({
     return (
         <html lang="zh-Hans-CN">
             <body className="antialiased w-screen h-screen">
-                <main
+                <div
                     id="[[SCROLL-CONTAINER]]"
                     className="size-full relative overflow-x-hidden overflow-y-auto"
                 >
                     <Header />
 
                     {children}
-                </main>
+                </div>
             </body>
         </html>
     );

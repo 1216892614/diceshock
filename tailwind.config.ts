@@ -76,9 +76,9 @@ export default {
         "warning": "#f5ed00",
         "error": "#ff5b24",
 
-        "--rounded-box": "0rem",
-        "--rounded-btn": "0rem",
-        "--rounded-badge": "0rem",
+        "--rounded-box": "1rem",
+        "--rounded-btn": ".5rem",
+        "--rounded-badge": "1.9rem",
 
         "--animation-btn": ".25s",
         "--animation-input": ".2s",
