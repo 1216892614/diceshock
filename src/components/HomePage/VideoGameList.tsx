@@ -46,7 +46,7 @@ const VideoGameList = () => (
         </div>
 
         <div className="w-full h-[80vw] max-h-[35rem] -mt-[2rem] relative [perspective:1000px]">
-            <div className="w-full h-[20rem] md:h-[40rem] absolute top-[15rem] md:top-[10rem] bg-primary" />
+            <div className="w-full h-[20rem] md:h-[40rem] absolute top-[10rem] md:top-[10rem] bg-primary" />
 
             <Image
                 className="absolute left-1/2 top-[15rem] md:top-[10rem] -translate-x-1/2 w-full scale-125"
