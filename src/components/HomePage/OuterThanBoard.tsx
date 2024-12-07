@@ -25,7 +25,7 @@ const OuterThanBoard = () => {
     const { ref, progress } = useSticky();
 
     return (
-        <div className="w-full h-[300vh] mb-96" ref={ref}>
+        <div className="w-full h-[250vh] mb-96" ref={ref}>
             <div className="w-full h-screen sticky top-0">
                 <div className="absolute left-4 top-[12rem] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
                     <p>
@@ -44,19 +44,20 @@ const OuterThanBoard = () => {
                             style={{
                                 backgroundColor: colors[idx % colors.length],
                                 transform: progress.to((p) => {
-                                    const start = (idx - 1) / texts.length;
-                                    const end = idx / texts.length;
+                                    const start = (idx - 2) / texts.length;
+                                    const end = (idx - 1) / texts.length;
 
                                     if (p < start) return `scale(0)`;
                                     if (p > end) return `scale(1)`;
 
                                     return `scale(${
-                                        (p - start) / (end - start)
+                                        0.8 +
+                                        0.2 * ((p - start) / (end - start))
                                     })`;
                                 }),
                                 opacity: progress.to((p) => {
-                                    const start = (idx - 1) / texts.length;
-                                    const end = idx / texts.length;
+                                    const start = (idx - 2) / texts.length;
+                                    const end = (idx - 1) / texts.length;
 
                                     if (p < start) return 0;
                                     if (p > end) return 1;

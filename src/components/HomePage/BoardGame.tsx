@@ -70,10 +70,7 @@ const BoardGame = () => {
                             <br /> 精挑细选
                         </h3>
 
-                        <p
-                            ref={ref}
-                            className="w-56 text-base-content/70 text-xl"
-                        >
+                        <p className="w-56 text-base-content/70 text-xl">
                             DiceShock© 拥有
                             <span className="text-base-content">上百款</span>
                             精挑细选的桌游. 无论是一场
@@ -102,7 +99,10 @@ const BoardGame = () => {
                             <br /> 即刻约局
                         </h3>
 
-                        <p className="w-56 text-base-content/70 text-xl">
+                        <p
+                            ref={ref}
+                            className="w-56 text-base-content/70 text-xl"
+                        >
                             DiceShock© 被多所大学包围, 主理人耕耘桌游行业多年.
                             玩桌游的人开的桌游店,
                             <span className="text-base-content">
@@ -132,14 +132,11 @@ const BoardGame = () => {
                             专职店员贴心服务. 无论是
                             <span className="text-base-content">
                                 推荐桌游
-                            </span>
-                            ,{" "}
-                            <span className="text-base-content">
-                                讲解规则
-                            </span>
-                            , 组织游戏进行; 还是扮演游戏
-                            <span className="text-base-content">主持人</span>
-                            . 什么桌游都能开, 什么桌游都好玩.
+                            </span>,{" "}
+                            <span className="text-base-content">讲解规则</span>,
+                            组织游戏进行; 还是扮演游戏
+                            <span className="text-base-content">主持人</span>.
+                            什么桌游都能开, 什么桌游都好玩.
                         </p>
                     </animated.div>
                 </div>
