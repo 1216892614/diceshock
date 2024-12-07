@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useMemo } from "react";
-import { animated, useSpringValue, useInView } from "@react-spring/web";
+import React from "react";
+import { animated } from "@react-spring/web";
+import useSticky from "@/hooks/useSticky";
 
 const texts = [
     ["多个位面的居民声称", "他们突然遭遇了来自其他世界的异能人士."],
@@ -12,47 +13,12 @@ const texts = [
 ];
 
 const BladeRunner = () => {
-    const [ref, inView] = useInView();
-    const scrollY = useSpringValue(0);
-
-    const progress = useMemo(
-        () =>
-            scrollY.to((y) => {
-                if (!ref.current) return 0;
-
-                const { offsetTop, scrollHeight } =
-                    ref.current as HTMLDivElement;
-
-                return (y - offsetTop) / scrollHeight;
-            }),
-        [ref, scrollY]
-    );
-
-    useEffect(() => {
-        if (!inView) return;
-
-        const ctrler = new AbortController();
-        const container = document.getElementById(
-            "[[SCROLL-CONTAINER]]"
-        ) as HTMLDivElement;
-
-        if (!container) return;
-
-        container.addEventListener(
-            "scroll",
-            () => scrollY.start(container.scrollTop),
-            {
-                signal: ctrler.signal,
-            }
-        );
-
-        return () => ctrler.abort();
-    }, [inView, scrollY]);
+    const { ref, progress } = useSticky();
 
     const count = texts.flat().length;
 
     return (
-        <div className="w-full h-[500vh] mt-2" ref={ref}>
+        <div className="w-full h-[300vh] mt-2" ref={ref}>
             <div className="sticky top-0 w-full h-screen flex flex-col justify-center py-24 px-4 [&>*]:text-xl [&>*]:font-bold">
                 {texts.map((p, pid) => (
                     <p key={pid} className="md:ml-[10vw] max-w-[45rem] mb-8">
@@ -68,8 +34,8 @@ const BladeRunner = () => {
                                     }
                                     style={{
                                         opacity: progress.to((p) => {
-                                            const start = (idx - 1) / count;
-                                            const end = idx / count;
+                                            const start = (idx - 2) / count;
+                                            const end = (idx - 1) / count;
 
                                             if (p < start) return 0;
                                             if (p > end) return 1;
