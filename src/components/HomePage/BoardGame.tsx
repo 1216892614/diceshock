@@ -43,7 +43,7 @@ const BoardGame = () => {
             </h2>
 
             <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col mt-[4rem] [&:not(.text-primary)]:text-neutral-content">
-                <div className="absolute left-4 top-[10vh] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
+                <h2 className="absolute left-4 top-[10vh] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
                     <p>
                         <span className="text-primary">懂桌游</span>的桌游店
                     </p>
@@ -51,7 +51,7 @@ const BoardGame = () => {
                         有意思的
                         <span className="text-primary">好桌游</span>
                     </p>
-                </div>
+                </h2>
 
                 <div className="absolute left-1/2 lg:left-[40vw] top-[15rem] lg:top-[5vh] h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
                     <animated.div
