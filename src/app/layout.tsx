@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: "DiceShock",
-    description: "Boardgames-VideoGame-JMahjong",
+    description: "Boardgames-VideoGame-JPMahjong",
 };
 
 export default function RootLayout({
@@ -15,6 +15,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="zh-Hans-CN">
+            <head>
+                <link rel="icon" href="/svg/favicon.svg" />
+            </head>
             <body className="antialiased w-screen h-screen">
                 <div
                     id="[[SCROLL-CONTAINER]]"
