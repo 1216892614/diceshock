@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 import useSticky from "@/hooks/useSticky";
 import { animated } from "@react-spring/web";
+import { reRange } from "@/utils/math";
 
 const ZdogShapes = dynamic(() => import("./ZdogShapes"), {
     loading: () => (
@@ -25,7 +26,7 @@ const OuterThanBoard = () => {
     const { ref, progress } = useSticky();
 
     return (
-        <div className="w-full h-[250vh] mb-96" ref={ref}>
+        <div className="w-full h-[250vh]" ref={ref}>
             <div className="w-full h-screen sticky top-0">
                 <div className="absolute left-4 top-[12rem] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
                     <h2>
@@ -43,27 +44,16 @@ const OuterThanBoard = () => {
                             key={idx}
                             style={{
                                 backgroundColor: colors[idx % colors.length],
-                                transform: progress.to((p) => {
-                                    const start = (idx - 2) / texts.length;
-                                    const end = (idx - 1) / texts.length;
-
-                                    if (p < start) return `scale(0)`;
-                                    if (p > end) return `scale(1)`;
-
-                                    return `scale(${
-                                        0.8 +
-                                        0.2 * ((p - start) / (end - start))
-                                    })`;
-                                }),
-                                opacity: progress.to((p) => {
-                                    const start = (idx - 2) / texts.length;
-                                    const end = (idx - 1) / texts.length;
-
-                                    if (p < start) return 0;
-                                    if (p > end) return 1;
-
-                                    return (p - start) / (end - start);
-                                }),
+                                transform: progress.to(
+                                    (p) =>
+                                        `scale(${
+                                            0.8 +
+                                            0.2 * reRange(p, idx, texts.length)
+                                        })`
+                                ),
+                                opacity: progress.to((p) =>
+                                    reRange(p, idx, texts.length)
+                                ),
                             }}
                             className="chat-bubble text-xl mb-5 rounded-lg font-bold text-base-100 px-4 py-5 origin-left"
                         >

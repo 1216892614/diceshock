@@ -3,6 +3,7 @@
 import React from "react";
 import { animated } from "@react-spring/web";
 import useSticky from "@/hooks/useSticky";
+import { reRange } from "@/utils/math";
 
 const texts = [
     ["多个位面的居民声称", "他们突然遭遇了来自其他世界的异能人士."],
@@ -33,15 +34,9 @@ const BladeRunner = () => {
                                             : void 0
                                     }
                                     style={{
-                                        opacity: progress.to((p) => {
-                                            const start = (idx - 2) / count;
-                                            const end = (idx - 1) / count;
-
-                                            if (p < start) return 0;
-                                            if (p > end) return 1;
-
-                                            return (p - start) / (end - start);
-                                        }),
+                                        opacity: progress.to((p) =>
+                                            reRange(p, idx, count)
+                                        ),
                                     }}
                                 >
                                     {tx}
