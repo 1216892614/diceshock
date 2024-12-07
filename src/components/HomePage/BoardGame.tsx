@@ -53,7 +53,7 @@ const BoardGame = () => {
                     </p>
                 </div>
 
-                <div className="absolute left-1/2 lg:left-[40vw] top-[20rem] lg:top-[10rem] h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
+                <div className="absolute left-1/2 lg:left-[40vw] top-[15rem] lg:top-[5vh] h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
                     <animated.div
                         style={{
                             opacity: opacity1,
@@ -145,7 +145,7 @@ const BoardGame = () => {
                 </div>
             </div>
 
-            <div className="relative mt-[55vh] lg:mt-[15vh] w-full h-screen">
+            <div className="relative mt-[55rem] lg:mt-[20rem] w-full h-screen">
                 <GameList className="w-auto h-[calc(100vh-5rem)] m-2" />
             </div>
         </>
