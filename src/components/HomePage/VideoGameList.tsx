@@ -25,7 +25,7 @@ const VideoGameList = () => (
             <Forza className="w-1/3 max-w-64 absolute top-[10rem] lg:top-[15rem] left-1/2 -translate-x-1/2 text-primary" />
         </div>
 
-        <div className="w-full h-[60vw] max-h-[35rem] -mt-[2rem] relative [perspective:1000px]">
+        <div className="w-full h-[60vw] max-h-[35rem] mt-[2rem] sm:-mt-[2rem] relative [perspective:1000px]">
             <Image
                 className="absolute top-0 left-[calc(50%-5rem)] md:left-[calc(50%-10rem)] -translate-x-1/2 w-2/3 min-w-[20rem] max-w-[40rem] rounded-lg shadow-2xl"
                 width={1600}
@@ -73,7 +73,7 @@ const VideoGameList = () => (
             />
 
             <Image
-                className="absolute top-[10rem] lg:top-[15rem] left-0 w-2/3 min-w-[20rem] max-w-[40rem]"
+                className="absolute top-[10rem] lg:top-[15rem] -left-20 sm:left-0 w-2/3 min-w-[20rem] max-w-[40rem]"
                 width={1600}
                 height={900}
                 src="/img/hero-gale.png"
@@ -89,7 +89,7 @@ const VideoGameList = () => (
             />
 
             <Image
-                className="absolute top-[25rem] md:top-[30rem] left-[calc(50%-5rem)] md:left-1/2 -translate-x-1/2 w-2/3 min-w-[20rem] max-w-[40rem]"
+                className="absolute top-[25rem] md:top-[30rem] left-[calc(50%-2rem)] md:left-1/2 -translate-x-1/2 w-2/3 min-w-[20rem] max-w-[40rem]"
                 width={1710}
                 height={1380}
                 src="/img/hero-laezel.png"
@@ -97,7 +97,7 @@ const VideoGameList = () => (
             />
 
             <Image
-                className="absolute top-[25rem] left-[calc(20%)] md:left-[calc(50%-20rem)] -translate-x-1/2 w-2/3 min-w-[20rem] max-w-[40rem]"
+                className="absolute top-[22rem] sm:top-[25rem] left-[calc(20%)] md:left-[calc(50%-20rem)] -translate-x-1/2 w-2/3 min-w-[20rem] max-w-[40rem]"
                 width={1710}
                 height={1380}
                 src="/img/hero-shadowheart.png"
