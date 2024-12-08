@@ -29,10 +29,6 @@ const BoardGame = () => {
             opacity1.start(1);
             opacity2.start(1);
             opacity3.start(1);
-        } else {
-            opacity1.start(0);
-            opacity2.start(0);
-            opacity3.start(0);
         }
     }, [inView, opacity1, opacity2, opacity3]);
 
@@ -70,7 +66,10 @@ const BoardGame = () => {
                             <br /> 精挑细选
                         </h3>
 
-                        <p className="w-56 text-base-content/70 text-xl">
+                        <p
+                            ref={ref}
+                            className="w-56 text-base-content/70 text-xl"
+                        >
                             DiceShock© 拥有
                             <span className="text-base-content">上百款</span>
                             精挑细选的桌游. 无论是一场
@@ -99,10 +98,7 @@ const BoardGame = () => {
                             <br /> 即刻约局
                         </h3>
 
-                        <p
-                            ref={ref}
-                            className="w-56 text-base-content/70 text-xl"
-                        >
+                        <p className="w-56 text-base-content/70 text-xl">
                             DiceShock© 被多所大学包围, 主理人耕耘桌游行业多年.
                             玩桌游的人开的桌游店,
                             <span className="text-base-content">

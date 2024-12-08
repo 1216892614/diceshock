@@ -25,10 +25,6 @@ const VideoGame = () => {
             opacity1.start(1);
             opacity2.start(1);
             opacity3.start(1);
-        } else {
-            opacity1.start(0);
-            opacity2.start(0);
-            opacity3.start(0);
         }
     }, [inView, opacity1, opacity2, opacity3]);
 
@@ -61,7 +57,10 @@ const VideoGame = () => {
                             <br /> 大震撼
                         </h3>
 
-                        <p className="w-56 text-base-content/70 text-xl">
+                        <p
+                            ref={ref}
+                            className="w-56 text-base-content/70 text-xl"
+                        >
                             DiceShock© 为电玩区购置{" "}
                             <span className="text-base-content"> 72 英寸</span>
                             超大电视, 配合
@@ -88,10 +87,7 @@ const VideoGame = () => {
                             <br /> 音效磅礴
                         </h3>
 
-                        <p
-                            ref={ref}
-                            className="w-56 text-base-content/70 text-xl"
-                        >
+                        <p className="w-56 text-base-content/70 text-xl">
                             <span className="text-base-content">
                                 漫步者 Hi-Res{" "}
                             </span>
