@@ -76,13 +76,13 @@ const Credits = () => {
                 <p className="text-xl">期待你的加入</p>
             </div>
 
-            <div ref={ref2} className="w-full h-[200vh]">
+            <div ref={ref2} className="w-full h-[150vh]">
                 <div className="sticky top-0 w-full h-screen flex justify-center items-center">
                     <animated.div
                         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl"
                         style={{
                             opacity: progress2.to(
-                                (p) => 1 - reRange(p, 4, COUNT / 2)
+                                (p) => 1 - reRange(p, 4, COUNT)
                             ),
                         }}
                     >
@@ -92,9 +92,7 @@ const Credits = () => {
                     <animated.div
                         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
                         style={{
-                            opacity: progress2.to((p) =>
-                                reRange(p, 5, COUNT / 2)
-                            ),
+                            opacity: progress2.to((p) => reRange(p, 5, COUNT)),
                         }}
                     >
                         热爱桌游和生活的你
