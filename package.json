@@ -12,6 +12,7 @@
     "@phosphor-icons/react": "^2.1.7",
     "@react-spring/web": "^9.7.5",
     "@types/zdog": "^1.1.7",
+    "@vercel/analytics": "^1.4.1",
     "immer": "^10.1.1",
     "jotai": "^2.10.3",
     "js-cookie": "^3.0.5",
