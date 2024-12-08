@@ -55,7 +55,7 @@ const HomeHero = () => (
                 </span>
 
                 <span className="font-light text-base-100 text-[3vh] ml-2">
-                    光谷总部国际
+                    位于光谷总部国际2栋
                 </span>
             </div>
 
@@ -67,7 +67,7 @@ const HomeHero = () => (
                 <div className="relative size-full flex flex-col items-start justify-between">
                     <div className="-mt-[2vw]">
                         <div className="font-light text-base-100 text-[4vw] ml-[0.5vw] mt-2 -mb-[2vw]">
-                            光谷总部国际
+                            位于光谷总部国际2栋
                         </div>
 
                         <div className="font-bold text-base-100 text-[8vw] -mb-[2vw]">
