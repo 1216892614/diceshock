@@ -5,6 +5,7 @@ import HomeHero from "@/components/HomePage/HomeHero";
 import OuterThanBoard from "@/components/HomePage/OuterThanBoard";
 import VideoGame from "@/components/HomePage/VideoGame";
 import VideoGameList from "@/components/HomePage/VideoGameList";
+import Agents from "@/components/HomePage/Agents";
 
 export default function Home() {
     return (
@@ -39,6 +40,8 @@ export default function Home() {
             <VideoGame />
 
             <VideoGameList />
+
+            <Agents />
         </main>
     );
 }

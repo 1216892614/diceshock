@@ -17,7 +17,7 @@ const PAGES: PageType[] = [
         href: `/`,
     },
     {
-        title: "DiceShock Agents",
+        title: "DiceShock Agents©",
         href: `/`,
     },
     {
