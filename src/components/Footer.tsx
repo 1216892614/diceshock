@@ -34,6 +34,7 @@ const Footer = () => {
                         <br />
                         Wuhan DiceShock Culture Co., Ltd.
                         <br />
+                        位于光谷总部国际二楼 204 室
                         <br />
                         This page is powered by Vercel.
                     </p>
