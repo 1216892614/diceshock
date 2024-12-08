@@ -23,7 +23,7 @@ const Footer = () => (
                     Wuhan DiceShock Culture Co., Ltd.
                     <br />
                     <br />
-                    This page powered by Vercel.
+                    This page is powered by Vercel.
                 </p>
             </aside>
             <nav>
