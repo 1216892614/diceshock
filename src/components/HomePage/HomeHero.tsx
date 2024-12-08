@@ -36,7 +36,7 @@ const HomeHero = () => (
 
                 <div className="absolute bottom-0 w-[37rem] left-5 bg-base-100 flex justify-between pl-6 [&>*]:text-2xl hover:[&>*]:text-base-100 hover:[&>*]:bg-base-content">
                     <Link href="#BoardGame">桌游</Link>
-                    <Link href="/">日麻</Link>
+                    <Link href="#JPMahjong">日麻</Link>
                     <Link href="#VideoGame">主机</Link>
                 </div>
 
@@ -116,7 +116,7 @@ const HomeHero = () => (
 
                 <div className="absolute bottom-2 w-[40vw] left-0 bg-base-100 flex justify-between pl-6 [&>*]:text-[3vw] hover:[&>*]:text-base-100 hover:[&>*]:bg-base-content">
                     <Link href="#BoardGame">桌游</Link>
-                    <Link href="/">日麻</Link>
+                    <Link href="#JPMahjong">日麻</Link>
                     <Link href="#VideoGame">主机</Link>
                 </div>
             </div>

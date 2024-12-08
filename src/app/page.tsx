@@ -6,6 +6,8 @@ import OuterThanBoard from "@/components/HomePage/OuterThanBoard";
 import VideoGame from "@/components/HomePage/VideoGame";
 import VideoGameList from "@/components/HomePage/VideoGameList";
 import Agents from "@/components/HomePage/Agents";
+import JPMahjong from "@/components/HomePage/JPMahjong";
+import MahjongMatch from "@/components/HomePage/MahjongMatch";
 
 export default function Home() {
     return (
@@ -34,6 +36,10 @@ export default function Home() {
             <BoardGame />
 
             <OuterThanBoard />
+
+            <JPMahjong />
+
+            <MahjongMatch />
 
             <GameStart />
 
