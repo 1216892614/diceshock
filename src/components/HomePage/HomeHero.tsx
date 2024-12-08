@@ -59,15 +59,15 @@ const HomeHero = () => (
                 </span>
             </div>
 
-            <LongTextLogo className="absolute text-base-100 h-[10vh] bottom-0 right-0" />
+            <LongTextLogo className="absolute text-base-100 h-[8vh] bottom-0 right-0" />
         </div>
 
         <div className="relative w-full h-[calc(100vh-4rem)] max-h-[calc(100vh-4rem)] overflow-hidden flex lg:hidden">
             <div className="relative w-1/2 h-full bg-base-content flex justify-between overflow-hidden rounded-br-2xl">
                 <div className="relative size-full flex flex-col items-start justify-between">
                     <div className="-mt-[2vw]">
-                        <div className="font-light text-base-100 text-[4vw] ml-[0.5vw] mt-2 -mb-[2vw]">
-                            位于光谷总部国际2栋
+                        <div className="font-light text-base-100 text-[3vw] ml-[0.5vw] mt-3 -mb-[2.5vw]">
+                            光谷总部国际2栋
                         </div>
 
                         <div className="font-bold text-base-100 text-[8vw] -mb-[2vw]">
@@ -79,7 +79,7 @@ const HomeHero = () => (
                         </div>
                     </div>
 
-                    <LongTextLogo className="absolute h-[10vw] -left-[30.5vw] bottom-[28vw] rotate-90 text-base-100" />
+                    <LongTextLogo className="absolute h-[9vw] -left-[27.5vw] bottom-[28vw] rotate-90 text-base-100" />
                 </div>
 
                 <Rainbow
