@@ -44,7 +44,7 @@ const VideoGame = () => {
             </h2>
 
             <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col mt-[4rem] [&:not(.text-primary)]:text-neutral-content">
-                <h2 className="absolute left-4 top-[10vh] [&]:text-4xl md:[&]:text-7xl [&]:text-base-content">
+                <h2 className="absolute left-4 top-[10vh] [&]:text-4xl lg:[&]:text-7xl [&]:text-base-content">
                     <p>好游戏配上好设备</p>
                     <p className="text-primary">开最快的车, 战最烈的斗</p>
                 </h2>

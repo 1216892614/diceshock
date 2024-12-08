@@ -48,7 +48,7 @@ const BoardGame = () => {
             </h2>
 
             <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col mt-[4rem] [&:not(.text-primary)]:text-neutral-content">
-                <h2 className="absolute left-4 top-[10vh] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
+                <h2 className="absolute left-4 top-[10vh] [&]:text-5xl lg:[&]:text-7xl [&]:text-base-content">
                     <p>
                         <span className="text-primary">懂桌游</span>的桌游店
                     </p>
