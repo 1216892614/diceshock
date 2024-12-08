@@ -39,8 +39,6 @@ export default function Home() {
             <VideoGame />
 
             <VideoGameList />
-
-            <div className="h-[200vh]" />
         </main>
     );
 }
