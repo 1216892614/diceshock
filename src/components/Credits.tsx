@@ -18,11 +18,8 @@ const Credits = () => {
                     <animated.div
                         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl"
                         style={{
-                            opacity: progress1.to((p) =>
-                                Math.min(
-                                    reRange(p, 2, COUNT),
-                                    1 - reRange(p, 4, COUNT)
-                                )
+                            opacity: progress1.to(
+                                (p) => 1 - reRange(p, 4, COUNT)
                             ),
                         }}
                     >

@@ -63,6 +63,14 @@ const Footer = () => (
                 </Link>
             </nav>
         </footer>
+
+        <div className="footer footer-center bg-base-300 text-base-content p-4">
+            <aside>
+                <p>
+                    Power by Vercel.
+                </p>
+            </aside>
+        </div>
     </>
 );
 
