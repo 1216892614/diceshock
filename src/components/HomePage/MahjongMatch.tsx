@@ -37,7 +37,7 @@ const MahjongMatch = () => {
 
     return (
         <>
-            <div className="w-full py-52 flex flex-col justify-center items-center">
+            <div className="w-full py-52 flex flex-col justify-center items-center mt-[40rem] lg:mt-0">
                 <animated.div
                     style={{
                         opacity: opacity1,
@@ -46,7 +46,7 @@ const MahjongMatch = () => {
                 >
                     <Lighting className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/70 w-40" />
 
-                    <h3 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold italic">
+                    <h3 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold italic text-nowrap">
                         公式战
                     </h3>
                 </animated.div>
