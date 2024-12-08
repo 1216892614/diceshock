@@ -14,15 +14,15 @@ type PageType = {
 const PAGES: PageType[] = [
     {
         title: "库存",
-        href: `/`,
+        href: `/inventory`,
     },
     {
         title: "DiceShock Agents©",
-        href: `/`,
+        href: `/diceshock-agents`,
     },
     {
         title: "活动&比赛",
-        href: `/`,
+        href: `/news`,
     },
     {
         title: "关于我们",

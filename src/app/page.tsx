@@ -5,7 +5,7 @@ import HomeHero from "@/components/HomePage/HomeHero";
 import OuterThanBoard from "@/components/HomePage/OuterThanBoard";
 import VideoGame from "@/components/HomePage/VideoGame";
 import VideoGameList from "@/components/HomePage/VideoGameList";
-import Agents from "@/components/HomePage/Agents";
+import Agents from "@/components/Agents";
 import JPMahjong from "@/components/HomePage/JPMahjong";
 import MahjongMatch from "@/components/HomePage/MahjongMatch";
 
