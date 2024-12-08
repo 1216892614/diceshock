@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Credits from "@/components/Credits";
 
 export const metadata: Metadata = {
     title: "DiceShock",
@@ -28,6 +29,7 @@ export default function RootLayout({
 
                     {children}
 
+                    <Credits />
                     <Footer />
                 </div>
             </body>
