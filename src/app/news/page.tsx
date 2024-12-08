@@ -1,6 +1,6 @@
 "use client";
 
-import "./globals.css";
+import "./style.css";
 
 import React, { useEffect } from "react";
 import Credits from "@/components/Credits";
@@ -23,7 +23,7 @@ const Inventory = () => {
 
     return (
         <>
-            <main className="dont_disable_this_QAQ">
+            <main className="dont_disable_this_QAQ w-full h-[calc(100vh-5rem)] max-h-[calc(100vh-5rem)] overflow-x-hidden overflow-y-auto">
                 <BladeRunner
                     texts={[
                         ["暂时这里没什么新消息欸..."],
