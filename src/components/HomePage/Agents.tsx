@@ -89,6 +89,9 @@ const Agents = () => (
                 <span className="text-primary">Agents Channel</span>{" "}
                 会员专属频道
             </p>
+            <p className="text-neutral-content text-xl px-4 text-center">
+                会员活动, 会员折扣, 会员福利, 一网打尽.
+            </p>
         </div>
     </>
 );
