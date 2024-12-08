@@ -71,10 +71,19 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <h6 className="footer-title">友情连接</h6>
-                    <Link href="/" className="link link-hover">
+                    <Link
+                        href="https://goddessfantasy.net"
+                        className="link link-hover"
+                    >
                         纯美苹果园
                     </Link>
-                    <Link href="/" className="link link-hover">
+                    <Link href="https://trow.cc/" className="link link-hover">
+                        The Ring of Wonder
+                    </Link>
+                    <Link
+                        href="https://www.gstonegames.com/"
+                        className="link link-hover"
+                    >
                         集石桌游
                     </Link>
                 </nav>
