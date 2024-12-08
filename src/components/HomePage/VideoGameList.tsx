@@ -14,11 +14,11 @@ const VideoGameList = () => {
     const { ref, progress } = useSticky();
 
     return (
-        <div ref={ref} className="w-full h-[200vw] md:h-[200vh] mb-[40vh]">
+        <div ref={ref} className="w-full h-[150vw] md:h-[200vh] mb-[50vh] md:mb-[40vh]">
             <div className="w-full h-[60vw] max-h-[35rem] mt-[40rem] lg:mt-0 relative [perspective:1000px]">
                 <animated.div
                     style={{
-                        opacity: progress.to((p) => reRange(p, -3, COUNT)),
+                        opacity: progress.to((p) => reRange(p, -4, COUNT)),
                     }}
                 >
                     <Image
@@ -32,7 +32,7 @@ const VideoGameList = () => {
 
                 <animated.div
                     style={{
-                        opacity: progress.to((p) => reRange(p, -2, COUNT)),
+                        opacity: progress.to((p) => reRange(p, -3, COUNT)),
                     }}
                 >
                     <Image
@@ -46,7 +46,7 @@ const VideoGameList = () => {
 
                 <animated.div
                     style={{
-                        opacity: progress.to((p) => reRange(p, -1, COUNT)),
+                        opacity: progress.to((p) => reRange(p, -2, COUNT)),
                     }}
                 >
                     <Forza className="w-1/3 max-w-64 absolute top-[10rem] lg:top-[15rem] left-1/2 -translate-x-1/2 text-primary" />
@@ -56,7 +56,7 @@ const VideoGameList = () => {
             <div className="w-full h-[60vw] max-h-[35rem] mt-[2rem] sm:-mt-[2rem] relative [perspective:1000px]">
                 <animated.div
                     style={{
-                        opacity: progress.to((p) => reRange(p, 0, COUNT)),
+                        opacity: progress.to((p) => reRange(p, -1, COUNT)),
                     }}
                 >
                     <Image
