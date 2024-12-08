@@ -36,12 +36,7 @@ const GameList: React.FC<{ className?: string }> = ({ className }) => {
         <div
             className={`bg-neutral rounded-xl shadow-lg flex flex-col overflow-hidden ${className}`}
         >
-            <form
-                onSubmit={(evt) => {
-                    evt.preventDefault();
-                }}
-                className="w-full flex flex-col"
-            >
+            <div className="w-full flex flex-col">
                 <div className="w-full flex flex-wrap justify-between">
                     <label className="input input-bordered input-lg flex items-center w-full m-2">
                         <input
@@ -319,7 +314,7 @@ const GameList: React.FC<{ className?: string }> = ({ className }) => {
                         </button>
                     </div>
                 </div>
-            </form>
+            </div>
 
             <div className="w-full h-full" />
         </div>
