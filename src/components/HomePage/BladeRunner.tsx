@@ -5,15 +5,7 @@ import { animated } from "@react-spring/web";
 import useSticky from "@/hooks/useSticky";
 import { reRange } from "@/utils/math";
 
-const texts = [
-    ["多个位面的居民声称", "他们突然遭遇了来自其他世界的异能人士."],
-    ["传闻这些异能人士", "通过一间名为 DiceShock© 的店铺往返多元位面."],
-    ["经调查, 这间名为 DiceShock© 的店铺", "是一个连接多元位面的实体."],
-    ["而遭遇者们将这些传闻中的异能人士称为"],
-    ["The Shock"],
-];
-
-const BladeRunner = () => {
+const BladeRunner: React.FC<{ texts: string[][] }> = ({ texts }) => {
     const { ref, progress } = useSticky();
 
     const count = texts.flat().length;

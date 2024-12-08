@@ -31,14 +31,14 @@ const HomeHero = () => (
                         DiceShock <Copyright />
                     </h1>
                     <span className="text-xl pl-2">
-                        Lift-off to be the Shock.
+                        桌游, 日麻, 主机, 我们都是认真的
                     </span>
                 </div>
 
                 <div className="absolute bottom-0 w-[37rem] left-5 bg-base-100 flex justify-between pl-6 [&>*]:text-2xl hover:[&>*]:text-base-100 hover:[&>*]:bg-base-content">
                     <Link href="#BoardGame">桌游</Link>
-                    <Link href="#VideoGame">主机</Link>
                     <Link href="/">日麻</Link>
+                    <Link href="#VideoGame">主机</Link>
                 </div>
 
                 <BlackSimplifyLogo className="absolute -bottom-5 left-[50rem] w-[20rem] bg-base-100" />
@@ -86,12 +86,11 @@ const HomeHero = () => (
                     <h1 className="font-bold flex text-[7vw] justify-center items-center">
                         DiceShock <Copyright />
                     </h1>
-                    <span className="text-[4vw] pl-[1vw]">
-                        Lift-off to be the Shock.
-                    </span>
+                    <p className="text-[4vw] pl-[calc(1vw-0.75rem)]">桌游, 日麻, 主机</p>
+                    <p className="text-[4vw] pl-[calc(1vw-0.75rem)]">我们都是认真的</p>
                 </div>
 
-                <div className="absolute left-[4vw] top-[20vw] flex w-[40vw] justify-around overflow-hidden">
+                <div className="absolute left-[4vw] top-[25vw] flex w-[40vw] justify-around overflow-hidden">
                     {_.range(0, 6).map((r) => (
                         <div
                             key={r}
@@ -106,8 +105,8 @@ const HomeHero = () => (
 
                 <div className="absolute bottom-2 w-[40vw] left-0 bg-base-100 flex justify-between pl-6 [&>*]:text-[3vw] hover:[&>*]:text-base-100 hover:[&>*]:bg-base-content">
                     <Link href="#BoardGame">桌游</Link>
-                    <Link href="#VideoGame">主机</Link>
                     <Link href="/">日麻</Link>
+                    <Link href="#VideoGame">主机</Link>
                 </div>
             </div>
         </div>
