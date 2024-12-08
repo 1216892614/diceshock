@@ -51,7 +51,7 @@ const HomeHero = () => (
                 <span className="font-bold text-base-100 text-[12vh]">F02</span>
 
                 <span className="font-light text-base-100 text-[5vh] ml-2">
-                    204
+                    203
                 </span>
 
                 <span className="font-light text-base-100 text-[3vh] ml-2">
@@ -75,7 +75,7 @@ const HomeHero = () => (
                         </div>
 
                         <div className="font-light text-base-100 text-[4vw] ml-[0.5vw]">
-                            204
+                            203
                         </div>
                     </div>
 

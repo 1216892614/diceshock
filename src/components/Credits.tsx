@@ -37,7 +37,7 @@ const Credits = () => {
                             ),
                         }}
                     >
-                        一家开在位于光谷总部国际2栋204室的桌游店
+                        一家开在位于光谷总部国际2栋203室的桌游店
                     </animated.div>
 
                     <animated.div
