@@ -12,7 +12,8 @@ const GameList = dynamic(() => import("@/components/GameList"), {
 });
 
 const BoardGame = () => {
-    const [ref, inView] = useInView();
+    const [refStart, inViewStart] = useInView();
+    const [refEnd, inViewEnd] = useInView();
 
     const opacity1 = useSpringValue(0.1, {
         config: { damping: 5, friction: 20 },
@@ -25,12 +26,20 @@ const BoardGame = () => {
     });
 
     useEffect(() => {
-        if (inView) {
+        if (inViewStart) {
             opacity1.start(1);
             opacity2.start(1);
             opacity3.start(1);
+            return;
         }
-    }, [inView, opacity1, opacity2, opacity3]);
+
+        if (!inViewEnd) {
+            opacity1.start(0);
+            opacity2.start(0);
+            opacity3.start(0);
+            return;
+        }
+    }, [inViewEnd, inViewStart, opacity1, opacity2, opacity3]);
 
     return (
         <>
@@ -67,7 +76,7 @@ const BoardGame = () => {
                         </h3>
 
                         <p
-                            ref={ref}
+                            ref={refStart}
                             className="w-56 text-base-content/70 text-xl"
                         >
                             DiceShock© 拥有
@@ -124,7 +133,10 @@ const BoardGame = () => {
                             <br /> 啥都能开
                         </h3>
 
-                        <p className="w-56 text-base-content/70 text-xl">
+                        <p
+                            ref={refEnd}
+                            className="w-56 text-base-content/70 text-xl"
+                        >
                             专职店员贴心服务. 无论是
                             <span className="text-base-content">
                                 推荐桌游

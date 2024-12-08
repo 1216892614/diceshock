@@ -18,63 +18,67 @@ const Agents = () => (
             </h2>
             <p className="text-sm sm:text-xl mb-20">选择你的会员计划</p>
 
-            <div className="w-full flex flex-wrap [&>*]:mb-10 [&>*]:mx-2 justify-around items-stretch">
-                <div className="card bg-base-200 w-96 shadow-xl">
-                    <figure>
-                        <TableAgent className="w-[20rem] py-[5.5rem]" />
-                    </figure>
-                    <div className="card-body">
-                        <h2 className="card-title">Table AGENT 储值卡</h2>
-                        <p>充值福利, 付费折扣.</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn bg-black text-primary">
-                                联系我们
-                            </button>
+            <div className="w-full flex flex-wrap justify-center items-stretch">
+                <div className="flex flex-wrap items-center justify-center">
+                    <div className="card bg-base-200 w-96 shadow-xl mb-10 mx-2">
+                        <figure>
+                            <TableAgent className="w-[20rem] py-[5.5rem]" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title">Table AGENT 储值卡</h2>
+                            <p>充值福利, 付费折扣.</p>
+                            <div className="card-actions justify-end">
+                                <button className="btn bg-black text-primary">
+                                    联系我们
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card bg-base-200 w-96 shadow-xl mb-10 mx-2">
+                        <figure>
+                            <TablePassCC className="w-[20rem] py-[5.5rem]" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title">CC桌面通行证</h2>
+                            <p>超低廉价格, 办理20个工作日畅玩.</p>
+                            <div className="card-actions justify-end">
+                                <button className="btn bg-black text-primary">
+                                    联系我们
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="card bg-base-200 w-96 shadow-xl">
-                    <figure>
-                        <TablePassCC className="w-[20rem] py-[5.5rem]" />
-                    </figure>
-                    <div className="card-body">
-                        <h2 className="card-title">CC桌面通行证</h2>
-                        <p>超低廉价格, 办理20个工作日畅玩.</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn bg-black text-primary">
-                                联系我们
-                            </button>
+                <div className="flex flex-wrap items-center justify-center">
+                    <div className="card bg-base-200 w-96 shadow-xl mb-10 mx-2">
+                        <figure>
+                            <TablePass className="w-[20rem] py-[5.5rem]" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title">桌面通行证</h2>
+                            <p>办理30天畅玩无限!</p>
+                            <div className="card-actions justify-end">
+                                <button className="btn bg-black text-primary">
+                                    联系我们
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="card bg-base-200 w-96 shadow-xl">
-                    <figure>
-                        <TablePass className="w-[20rem] py-[5.5rem]" />
-                    </figure>
-                    <div className="card-body">
-                        <h2 className="card-title">桌面通行证</h2>
-                        <p>办理30天畅玩无限!</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn bg-black text-primary">
-                                联系我们
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card bg-base-200 w-96 shadow-xl">
-                    <figure>
-                        <TablePassLTS className="h-[25rem]" />
-                    </figure>
-                    <div className="card-body">
-                        <h2 className="card-title">桌面通行证 LTS</h2>
-                        <p>办理365天畅玩无限</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn bg-black text-primary">
-                                联系我们
-                            </button>
+                    <div className="card bg-base-200 w-96 shadow-xl mb-10 mx-2">
+                        <figure>
+                            <TablePassLTS className="h-[25rem]" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title">桌面通行证 LTS</h2>
+                            <p>办理365天畅玩无限</p>
+                            <div className="card-actions justify-end">
+                                <button className="btn bg-black text-primary">
+                                    联系我们
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
