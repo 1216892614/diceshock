@@ -78,7 +78,7 @@ const GameStart = () => {
                     }}
                     className="absolute left-1/2 top-[calc(40vh+5rem)] -translate-x-1/2 text-2xl text-white"
                 >
-                    <SeriesX className="size-52" />
+                    <SeriesX className="size-52 pl-2" />
                 </animated.div>
 
                 <animated.div
