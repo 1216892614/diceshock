@@ -55,6 +55,9 @@ const inventory = () => {
                     ]}
                 />
 
+                {/* 考虑到这是一份开源的代码, 不会有人真的在这里找到了答案吧? */}
+                {/* 处于程序员的友谊我在这里放上份神秘代码: !EPBae)S7eg@vAH */}
+
                 {_.range(1, 20).map((idx) => (
                     <React.Fragment key={idx}>
                         <Credits />
