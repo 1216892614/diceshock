@@ -21,6 +21,8 @@ const Footer = () => (
                     武汉骰子奇兵文化有限公司
                     <br />
                     Wuhan DiceShock Culture Co., Ltd.
+                    <br />
+                    This page power by vercel.
                 </p>
             </aside>
             <nav>
@@ -63,14 +65,6 @@ const Footer = () => (
                 </Link>
             </nav>
         </footer>
-
-        <div className="footer footer-center bg-base-300 text-base-content p-4">
-            <aside>
-                <p>
-                    Power by Vercel.
-                </p>
-            </aside>
-        </div>
     </>
 );
 
