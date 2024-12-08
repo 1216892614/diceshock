@@ -5,8 +5,15 @@ import Link from "next/link";
 import Logo from "@/assets/svg/black-simplify-with-text-logo.svg";
 import Gradient from "./Gradient";
 import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+    const [container, setContainer] = useState<null | HTMLElement>(null);
+
+    useEffect(() => {
+        setContainer(document.getElementById("[[SCROLL-CONTAINER]]") ?? null);
+    }, []);
+
     return (
         <>
             <Gradient
@@ -72,18 +79,14 @@ const Footer = () => {
                 </nav>
             </footer>
 
-            <button className="w-full h-[4rem] bg-primary hover:bg-base-100 [&>h5]:hover:text-base-content flex justify-between items-center">
+            <button
+                onClick={() =>
+                    container?.scrollTo?.({ top: 0, behavior: "smooth" })
+                }
+                className="w-full h-[4rem] bg-primary hover:bg-base-100 [&>h5]:hover:text-base-content flex justify-between items-center"
+            >
                 <h5 className="mx-auto text-black text-xl">返回顶部</h5>
-                <div
-                    onClick={() =>
-                        (
-                            document.getElementById(
-                                "[[SCROLL-CONTAINER]]"
-                            ) as HTMLElement
-                        )?.scrollTo?.({ top: 0, behavior: "smooth" })
-                    }
-                    className="w-[4rem] h-full bg-base-100 flex justify-center items-center"
-                >
+                <div className="w-[4rem] h-full bg-base-100 flex justify-center items-center">
                     <ArrowUp className="size-10" />
                 </div>
             </button>
