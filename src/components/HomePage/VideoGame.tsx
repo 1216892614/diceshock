@@ -22,14 +22,14 @@ const VideoGame = () => {
     });
 
     useEffect(() => {
-        if (inViewStart) {
+        if (inViewStart || inViewEnd) {
             opacity1.start(1);
             opacity2.start(1);
             opacity3.start(1);
             return;
         }
 
-        if (!inViewEnd) {
+        if (!inViewEnd && !inViewStart) {
             opacity1.start(0);
             opacity2.start(0);
             opacity3.start(0);
