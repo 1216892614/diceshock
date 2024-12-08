@@ -79,7 +79,7 @@ const HomeHero = () => (
                         </div>
                     </div>
 
-                    <LongTextLogo className="absolute h-[9vw] -left-[27.5vw] bottom-[28vw] rotate-90 text-base-100" />
+                    <LongTextLogo className="absolute h-[9vw] -left-[27.5vw] bottom-[24.5vw] rotate-90 text-base-100" />
                 </div>
 
                 <Rainbow
