@@ -23,7 +23,7 @@ const Inventory = () => {
 
     return (
         <>
-            <main>
+            <main className="dont_disable_this_QAQ">
                 <BladeRunner
                     texts={[
                         ["暂时这里没什么新消息欸..."],
