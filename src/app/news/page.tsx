@@ -1,12 +1,7 @@
 "use client";
 
-import "./style.css";
-
 import React from "react";
-import Credits from "@/components/Credits";
-import Footer from "@/components/Footer";
 import BladeRunner from "@/components/HomePage/BladeRunner";
-import _ from "lodash/fp";
 
 const Inventory = () => {
     return (
@@ -22,56 +17,6 @@ const Inventory = () => {
                         ["就看看我们的演职人员表吧..."],
                     ]}
                 />
-
-                <Credits />
-
-                <BladeRunner
-                    texts={[
-                        ["惊了, 你居然能翻到这里?"],
-                        ["不是, 无聊也不能这么无聊吧..."],
-                        ["我就是个写网页的, ", "往下翻又不会真给你发点什么..."],
-                        ["这次真的是结束了."],
-                        ["..."],
-                    ]}
-                />
-
-                <Credits />
-
-                <div className="w-full h-[1000vh] md:mt-[-70vh]">
-                    <div className="sticky top-0 h-screen flex flex-col">
-                        <div className="w-full h-full" />
-                        <Footer />
-                    </div>
-                </div>
-
-                <BladeRunner
-                    texts={[
-                        ["真不愧是你.", "最后还是被你翻到了, "],
-                        ["直接联系我 (Nerd), 或者找店员老板什么的联系我"],
-                        [
-                            "再下面都是重复的, 是用来骗那些直接用 ctrl + end, 的人, ",
-                            "笑(",
-                        ],
-                        ["神秘代码: "],
-                        ["THX1138"],
-                    ]}
-                />
-
-                {/* 考虑到这是一份开源的代码, 不会有人真的在这里找到了答案吧? */}
-                {/* 出于程序员的友谊我在这里放上份神秘代码: !EPBae)S7eg@vAH */}
-
-                {_.range(1, 20).map((idx) => (
-                    <React.Fragment key={idx}>
-                        <Credits />
-
-                        <div className="w-full h-[1000vh] md:mt-[-70vh]">
-                            <div className="sticky top-0 h-screen flex flex-col">
-                                <div className="w-full h-full" />
-                                <Footer />
-                            </div>
-                        </div>
-                    </React.Fragment>
-                ))}
             </main>
         </>
     );

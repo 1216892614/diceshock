@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Credits from "@/components/Credits";
+import StarPlease from "@/components/StarPlease";
 
 export const metadata: Metadata = {
     title: "DiceShock",
@@ -35,6 +36,7 @@ export default function RootLayout({
                     <Footer />
                 </div>
 
+                <StarPlease />
                 <Analytics />
                 <SpeedInsights />
             </body>
