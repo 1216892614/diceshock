@@ -1,8 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useAtom } from "jotai";
+import React, { useEffect } from "react";
 
-const StarPlease = () => {
+import { msgA } from "@/hooks/useMessage";
+
+const Msg = () => {
+    const comp = useAtom(msgA);
+
     useEffect(() => {
         setTimeout(() => {
             console.log(
@@ -15,7 +20,11 @@ const StarPlease = () => {
         }, 1000);
     }, []);
 
-    return <></>;
+    return (
+        <div className="toast toast-bottom toast-end">
+            {comp as React.ReactNode}
+        </div>
+    );
 };
 
-export default StarPlease;
+export default Msg;

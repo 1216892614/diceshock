@@ -8,8 +8,6 @@ const GameList: React.FC<{ className?: string }> = ({ className }) => {
             className={`bg-neutral rounded-xl shadow-lg flex flex-col overflow-hidden ${className}`}
         >
             <Filter />
-
-            <div className="w-full h-full" />
         </div>
     );
 };

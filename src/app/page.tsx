@@ -8,6 +8,7 @@ import VideoGameList from "@/components/HomePage/VideoGameList";
 import Agents from "@/components/Agents";
 import JPMahjong from "@/components/HomePage/JPMahjong";
 import MahjongMatch from "@/components/HomePage/MahjongMatch";
+import Credits from "@/components/Credits";
 
 export default function Home() {
     return (
@@ -48,6 +49,8 @@ export default function Home() {
             <VideoGameList />
 
             <Agents />
+
+            <Credits />
         </main>
     );
 }

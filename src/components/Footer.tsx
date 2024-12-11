@@ -56,6 +56,9 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <h6 className="footer-title">关于我们</h6>
+                    <Link href="/contact-us" className="link link-hover">
+                        联系我们
+                    </Link>
                     <Link href="/" className="link link-hover">
                         加入我们
                     </Link>
@@ -64,9 +67,6 @@ const Footer = () => {
                     </Link>
                     <Link href="/" className="link link-hover">
                         Cookie policy
-                    </Link>
-                    <Link href="/" className="link link-hover">
-                        联系我们
                     </Link>
                 </nav>
                 <nav>

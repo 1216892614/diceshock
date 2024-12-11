@@ -5,8 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Credits from "@/components/Credits";
-import StarPlease from "@/components/StarPlease";
+import Msg from "@/components/Msg";
 
 export const metadata: Metadata = {
     title: "DiceShock",
@@ -32,11 +31,10 @@ export default function RootLayout({
 
                     {children}
 
-                    <Credits />
+                    <Msg />
                     <Footer />
                 </div>
 
-                <StarPlease />
                 <Analytics />
                 <SpeedInsights />
             </body>
