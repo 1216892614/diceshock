@@ -29,6 +29,9 @@ importers:
       jotai:
         specifier: ^2.10.3
         version: 2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)
+      jotai-immer:
+        specifier: ^0.4.1
+        version: 0.4.1(immer@10.1.1)(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -1958,6 +1961,12 @@ packages:
   jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
+
+  jotai-immer@0.4.1:
+    resolution: {integrity: sha512-nQTt1HBKie/5OJDck1qLpV1PeBA6bjJLAczEYAx70PD8R4Mbu7gtexfBUCzJh6W6ecsOfwHksAYAesVth6SN9A==}
+    peerDependencies:
+      immer: '>=9.0.0'
+      jotai: '>=2.0.0'
 
   jotai@2.10.3:
     resolution: {integrity: sha512-Nnf4IwrLhNfuz2JOQLI0V/AgwcpxvVy8Ec8PidIIDeRi4KCFpwTFIpHAAcU+yCgnw/oASYElq9UY0YdUUegsSA==}
@@ -4859,6 +4868,11 @@ snapshots:
       '@pkgjs/parseargs': 0.11.0
 
   jiti@1.21.6: {}
+
+  jotai-immer@0.4.1(immer@10.1.1)(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)):
+    dependencies:
+      immer: 10.1.1
+      jotai: 2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)
 
   jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106):
     optionalDependencies:

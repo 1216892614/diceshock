@@ -1,5 +1,8 @@
 "use client";
 
+import React, { useRef } from "react";
+import { useAtom } from "jotai";
+import { atomWithImmer } from "jotai-immer";
 import {
     Backspace,
     Confetti,
@@ -8,34 +11,28 @@ import {
     MagnifyingGlass,
     Scroll,
 } from "@phosphor-icons/react/dist/ssr";
-import React, { useRef } from "react";
-import { useImmer } from "use-immer";
 
-const toggleArr = <I, T extends I>(arr: I[], item: T) => {
-    if (arr.includes(item)) return arr.filter((i) => i !== item);
+import { toggleArr } from "@/utils/arr";
 
-    return [...arr, item];
-};
+const filterCfgA = atomWithImmer<{
+    tags: ("SCORE_RACE" | "RPG" | "PARTY")[];
+    numOfPlayers: number | null;
+    isBestNumOfPlayers: boolean;
+    searchWords: string;
+}>({
+    tags: [],
+    numOfPlayers: null,
+    isBestNumOfPlayers: false,
+    searchWords: "",
+});
 
-const GameList: React.FC<{ className?: string }> = ({ className }) => {
-    const [filter, setFilter] = useImmer<{
-        tags: ("SCORE_RACE" | "RPG" | "PARTY")[];
-        numOfPlayers: number | null;
-        isBestNumOfPlayers: boolean;
-        searchWords: string;
-    }>({
-        tags: [],
-        numOfPlayers: null,
-        isBestNumOfPlayers: false,
-        searchWords: "",
-    });
+const Filter = () => {
+    const [filter, setFilter] = useAtom(filterCfgA);
 
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     return (
-        <div
-            className={`bg-neutral rounded-xl shadow-lg flex flex-col overflow-hidden ${className}`}
-        >
+        <>
             <div className="w-full flex flex-col">
                 <div className="w-full flex flex-wrap justify-between">
                     <label className="input input-bordered input-lg flex items-center w-full m-2">
@@ -315,10 +312,8 @@ const GameList: React.FC<{ className?: string }> = ({ className }) => {
                     </div>
                 </div>
             </div>
-
-            <div className="w-full h-full" />
-        </div>
+        </>
     );
 };
 
-export default GameList;
+export default Filter;
