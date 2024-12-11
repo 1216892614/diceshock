@@ -38,7 +38,10 @@ const useMessage = () => {
 
                 <div>
                     <button
-                        onClick={() => setMsg(null)}
+                        onClick={() => {
+                            setMsg(null);
+                            progress.reset();
+                        }}
                         className="btn btn-md btn-square btn-ghost mr-2"
                     >
                         <X className="size-6" />
@@ -66,7 +69,10 @@ const useMessage = () => {
                 <span>{tx}</span>
                 <div>
                     <button
-                        onClick={() => setMsg(null)}
+                        onClick={() => {
+                            setMsg(null);
+                            progress.reset();
+                        }}
                         className="btn btn-md btn-square btn-ghost mr-2"
                     >
                         <X className="size-6" />
@@ -94,7 +100,10 @@ const useMessage = () => {
                 <span>{tx}</span>
                 <div>
                     <button
-                        onClick={() => setMsg(null)}
+                        onClick={() => {
+                            setMsg(null);
+                            progress.reset();
+                        }}
                         className="btn btn-md btn-square btn-ghost mr-2"
                     >
                         <X className="size-6" />
