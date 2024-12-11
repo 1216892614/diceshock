@@ -4,6 +4,7 @@ import TablePass from "@/assets/svg/agents/DiceshockItems_table-pass-icon.svg";
 import TablePassLTS from "@/assets/svg/agents/DiceshockItems_table-pass-lts-icon.svg";
 import AgentsChannel from "@/assets/svg/agents_channel.svg";
 import AgentLogo from "@/assets/svg/agent-logo.svg";
+import Link from "next/link";
 
 const Agents = () => (
     <>
@@ -28,9 +29,12 @@ const Agents = () => (
                             <h2 className="card-title">Table AGENT 储值卡</h2>
                             <p>充值福利, 付费折扣.</p>
                             <div className="card-actions justify-end">
-                                <button className="btn bg-black text-primary">
+                                <Link
+                                    href="/contact-us"
+                                    className="btn bg-black text-primary"
+                                >
                                     联系我们
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -43,9 +47,12 @@ const Agents = () => (
                             <h2 className="card-title">CC桌面通行证</h2>
                             <p>超低廉价格, 办理20个工作日畅玩.</p>
                             <div className="card-actions justify-end">
-                                <button className="btn bg-black text-primary">
+                                <Link
+                                    href="/contact-us"
+                                    className="btn bg-black text-primary"
+                                >
                                     联系我们
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -60,9 +67,12 @@ const Agents = () => (
                             <h2 className="card-title">桌面通行证</h2>
                             <p>办理30天畅玩无限!</p>
                             <div className="card-actions justify-end">
-                                <button className="btn bg-black text-primary">
+                                <Link
+                                    href="/contact-us"
+                                    className="btn bg-black text-primary"
+                                >
                                     联系我们
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -75,9 +85,12 @@ const Agents = () => (
                             <h2 className="card-title">桌面通行证 LTS</h2>
                             <p>办理365天畅玩无限</p>
                             <div className="card-actions justify-end">
-                                <button className="btn bg-black text-primary">
+                                <Link
+                                    href="/contact-us"
+                                    className="btn bg-black text-primary"
+                                >
                                     联系我们
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

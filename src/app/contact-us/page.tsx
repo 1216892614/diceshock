@@ -7,7 +7,7 @@ import QQ from "@/assets/svg/tencent-qq.svg";
 import Wechat from "@/assets/svg/wechat.svg";
 import useMessage from "@/hooks/useMessage";
 
-const CopyItem: React.FC<{ tx: string }> = ({ tx }) => {
+const CopyItem = (tx: string) => {
     const msg = useMessage();
 
     return (
@@ -46,14 +46,14 @@ const Page = () => {
                             <b>QQ群(DiceShock桌游·日麻·主机):</b>
                         </p>
 
-                        <CopyItem tx="930828672" />
+                        {CopyItem("930828672")}
 
                         <br />
                         <p>
                             <b>联系主理人辣条(ID: Gahon):</b>
                         </p>
 
-                        <CopyItem tx="519576792" />
+                        {CopyItem("519576792")}
                     </div>
                 </div>
             </div>
@@ -69,7 +69,8 @@ const Page = () => {
                         <p>
                             <b>联系主理人(Hygge/辣条):</b>
                         </p>
-                        <CopyItem tx="GahonTian" />
+
+                        {CopyItem("GahonTian")}
                     </div>
                 </div>
             </div>
