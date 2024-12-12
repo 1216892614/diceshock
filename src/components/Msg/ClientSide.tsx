@@ -1,12 +1,10 @@
-"use client";
-
 import { useAtomValue } from "jotai";
 import React, { useEffect } from "react";
 
 import { msgA } from "@/hooks/useMessage";
 
 const Msg = () => {
-    const Comp = useAtomValue(msgA);
+    const comp = useAtomValue(msgA);
 
     useEffect(() => {
         setTimeout(() => {
@@ -21,7 +19,9 @@ const Msg = () => {
     }, []);
 
     return (
-        <div className="toast toast-bottom toast-end">{Comp && <Comp />}</div>
+        <div className="toast toast-bottom toast-end">
+            {comp as React.ReactNode}
+        </div>
     );
 };
 

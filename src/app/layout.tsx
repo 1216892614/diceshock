@@ -31,8 +31,9 @@ export default function RootLayout({
 
                     {children}
 
-                    <Msg />
                     <Footer />
+
+                    <Msg />
                 </div>
 
                 <Analytics />
