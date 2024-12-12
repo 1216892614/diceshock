@@ -5,7 +5,7 @@ import { CheckCircle, X } from "@phosphor-icons/react/dist/ssr";
 import { atom, useAtom } from "jotai";
 import React from "react";
 
-export const msgA = atom(null as React.ReactNode);
+export const msgA = atom(null as React.FC | null);
 
 const useMessage = () => {
     const [msg, setMsg] = useAtom(msgA);
@@ -23,7 +23,7 @@ const useMessage = () => {
             },
         });
 
-        setMsg(
+        setMsg(() => (
             <animated.div
                 style={{
                     zoom: progress.to((p) => 0.8 + p * 0.2),
@@ -48,14 +48,14 @@ const useMessage = () => {
                     </button>
                 </div>
             </animated.div>
-        );
+        ));
     };
 
     const warn = (tx: string) => {
         progress.set(1);
         progress.start(0);
 
-        setMsg(
+        setMsg(() => (
             <animated.div
                 style={{
                     zoom: progress.to((p) => 0.8 + p * 0.2),
@@ -79,14 +79,14 @@ const useMessage = () => {
                     </button>
                 </div>
             </animated.div>
-        );
+        ));
     };
 
     const err = (tx: string) => {
         progress.set(1);
         progress.start(0);
 
-        setMsg(
+        setMsg(() => (
             <animated.div
                 style={{
                     zoom: progress.to((p) => 0.8 + p * 0.2),
@@ -110,7 +110,7 @@ const useMessage = () => {
                     </button>
                 </div>
             </animated.div>
-        );
+        ));
     };
 
     return { success, warn, err, comp: msg };
