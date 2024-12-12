@@ -38,7 +38,7 @@ const OuterThanBoard = () => {
                     </h2>
                 </div>
 
-                <div className="absolute left-10 top-[12rem] md:top-[16rem] flex flex-col chat chat-start">
+                <div className="absolute left-10 top-[12rem] md:top-[17rem] flex flex-col chat chat-start">
                     {texts.map((tx, idx) => (
                         <animated.p
                             key={idx}
