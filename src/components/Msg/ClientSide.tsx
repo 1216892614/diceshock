@@ -1,7 +1,6 @@
 import { useAtomValue } from "jotai";
 import React, { useEffect } from "react";
-
-import { msgA } from "@/hooks/useMessage";
+import { msgA } from ".";
 
 const Msg = () => {
     const comp = useAtomValue(msgA);

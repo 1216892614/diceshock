@@ -5,10 +5,10 @@ import { Copy } from "@phosphor-icons/react/dist/ssr";
 
 import QQ from "@/assets/svg/tencent-qq.svg";
 import Wechat from "@/assets/svg/wechat.svg";
-import useMessage from "@/hooks/useMessage";
+import { useMsg } from "@/components/Msg";
 
 const CopyItem = (tx: string) => {
-    const msg = useMessage();
+    const msg = useMsg();
 
     return (
         <div className="mt-2 border border-base-300 rounded-xl shadow-inner py-1 pr-1 pl-4 flex justify-between items-center">
@@ -19,7 +19,7 @@ const CopyItem = (tx: string) => {
                         navigator.clipboard.writeText(tx);
                         msg.success("复制成功");
                     } catch {
-                        msg.err("没有剪贴板访问权限, 请查看你的浏览器设置");
+                        msg.error("没有剪贴板访问权限, 请查看你的浏览器设置");
                     }
                 }}
                 className="btn btn-sm btn-square btn-ghost"
