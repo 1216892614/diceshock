@@ -1,80 +1,70 @@
 "use client";
 
 import React from "react";
-import { Copy } from "@phosphor-icons/react/dist/ssr";
+
+import CopyItem from "@/components/CopyItem";
 
 import QQ from "@/assets/svg/tencent-qq.svg";
 import Wechat from "@/assets/svg/wechat.svg";
-import { useMsg } from "@/components/Msg";
-
-const CopyItem = (tx: string) => {
-    const msg = useMsg();
-
-    return (
-        <div className="mt-2 border border-base-300 rounded-xl shadow-inner py-1 pr-1 pl-4 flex justify-between items-center">
-            <span>{tx}</span>
-            <button
-                onClick={() => {
-                    try {
-                        navigator.clipboard.writeText(tx);
-                        msg.success("复制成功");
-                    } catch {
-                        msg.error("没有剪贴板访问权限, 请查看你的浏览器设置");
-                    }
-                }}
-                className="btn btn-sm btn-square btn-ghost"
-            >
-                <Copy size={32} />
-            </button>
-        </div>
-    );
-};
+import HookHole from "@/assets/svg/hook-hole.svg";
 
 const Page = () => {
     return (
-        <div className="w-full min-h-screen flex flex-wrap justify-center items-start mt-20">
-            <div className="card bg-base-200 h-[26rem] w-[20rem] shadow-xl mb-10 mx-2">
-                <figure className="h-[10rem] bg-accent text-black">
-                    <QQ className="size-12" />
-                </figure>
+        <>
+            <h1 className="w-full text-6xl font-black text-center my-20">
+                CONTACT US
+            </h1>
 
-                <div className="card-body justify-start">
-                    <h2 className="card-title">通过 QQ 联系我们</h2>
-                    <div>
-                        <br />
-                        <p>
-                            <b>QQ群(DiceShock桌游·日麻·主机):</b>
-                        </p>
+            <div className="w-full min-h-screen flex flex-wrap justify-center items-start mt-20">
+                <div className="card bg-base-200 h-[30rem] w-[20rem] shadow-xl border-b-2 border-base-300 mb-10 mx-2">
+                    <figure className="relative h-[15rem] bg-accent text-black">
+                        <HookHole className="absolute text-base-300 left-1/2 top-[0.75rem] -translate-x-1/2 w-14" />
+                        <HookHole className="absolute text-base-100 left-1/2 top-[0.90rem] -translate-x-1/2 w-14" />
 
-                        {CopyItem("930828672")}
+                        <QQ className="size-12" />
+                    </figure>
 
-                        <br />
-                        <p>
-                            <b>联系主理人辣条(ID: Gahon):</b>
-                        </p>
+                    <div className="card-body justify-start">
+                        <h2 className="card-title">通过 QQ 联系我们</h2>
+                        <div>
+                            <br />
+                            <p>
+                                <b>QQ群(DiceShock桌游·日麻·主机):</b>
+                            </p>
 
-                        {CopyItem("519576792")}
+                            {<CopyItem tx="930828672" />}
+
+                            <br />
+                            <p>
+                                <b>联系主理人辣条(ID: Gahon):</b>
+                            </p>
+
+                            {<CopyItem tx="519576792" />}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card bg-base-200 h-[24rem] w-[20rem] shadow-xl border-b-2 border-base-300 mb-10 mx-2">
+                    <figure className="relative h-[15rem] bg-primary text-black">
+                        <HookHole className="absolute text-base-300 left-1/2 top-[0.75rem] -translate-x-1/2 w-14" />
+                        <HookHole className="absolute text-base-100 left-1/2 top-[0.90rem] -translate-x-1/2 w-14" />
+
+                        <Wechat className="size-14" />
+                    </figure>
+                    <div className="card-body justify-start">
+                        <h2 className="card-title">通过微信联系我们</h2>
+                        <div>
+                            <br />
+                            <p>
+                                <b>联系主理人(Hygge/辣条):</b>
+                            </p>
+
+                            {<CopyItem tx="GahonTian" />}
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div className="card bg-base-200 h-[20rem] w-[20rem] shadow-xl mb-10 mx-2">
-                <figure className="h-[10rem] bg-primary text-black">
-                    <Wechat className="size-14" />
-                </figure>
-                <div className="card-body justify-start">
-                    <h2 className="card-title">通过微信联系我们</h2>
-                    <div>
-                        <br />
-                        <p>
-                            <b>联系主理人(Hygge/辣条):</b>
-                        </p>
-
-                        {CopyItem("GahonTian")}
-                    </div>
-                </div>
-            </div>
-        </div>
+        </>
     );
 };
 
