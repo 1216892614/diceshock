@@ -20,7 +20,10 @@ export const useMsg = () => {
     const progress = useSpringValue(1);
     const setComp = useSetAtom(msgA);
     const { styles, show } = useAMoment(progress, {
-        onRest: () => setComp(null),
+        onRest: () => {
+            progress.set(1);
+            setComp(null);
+        },
     });
 
     return {
