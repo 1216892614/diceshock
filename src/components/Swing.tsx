@@ -31,7 +31,7 @@ const Swing: React.FC<{
         const clampedY = Math.max(-1, Math.min(1, relativeY));
 
         x.start(clampedX);
-        y.start(clampedY);
+        y.start(-clampedY);
     };
 
     return (
@@ -51,7 +51,7 @@ const Swing: React.FC<{
                     transform: to(
                         [x, y],
                         (x, y) =>
-                            `rotateX(${x * intensity}deg) rotateY(${
+                            `rotateY(${x * intensity}deg) rotateX(${
                                 y * intensity
                             }deg)`
                     ),
