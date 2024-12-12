@@ -47,7 +47,6 @@ const Agents = () => {
     return (
         <>
             <animated.div
-                ref={ref}
                 style={{
                     opacity: opacity1,
                     scale: opacity1.to((p) => 0.8 + 0.2 * p),
@@ -64,7 +63,10 @@ const Agents = () => {
                 </h2>
                 <p className="text-sm sm:text-xl mb-20">选择你的会员计划</p>
 
-                <div className="w-full flex flex-wrap justify-center items-stretch">
+                <div
+                    ref={ref}
+                    className="w-full flex flex-wrap justify-center items-stretch"
+                >
                     <div className="flex flex-wrap items-center justify-center">
                         <Swing>
                             <animated.div
