@@ -74,7 +74,7 @@ const getMidMenu = (pages: PageType[]) =>
             if (href)
                 return (
                     <li key={i}>
-                        <Link href={href} className="text-nowrap">
+                        <Link href={href} className="text-nowrap mr-2">
                             {title}
                         </Link>
                     </li>
