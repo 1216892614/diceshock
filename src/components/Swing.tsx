@@ -1,19 +1,82 @@
 "use client";
 
-import { MouseEventHandler, useState } from "react";
-import { useSpringValue, animated, to } from "@react-spring/web";
+import { MouseEventHandler, useEffect, useState } from "react";
+import { useSpringValue, animated, to, useInView } from "@react-spring/web";
+import { useMsg } from "./Msg";
 
 const Swing: React.FC<{
     children: React.ReactNode;
     intensity?: number;
     className?: { outer?: string; inner?: string };
 }> = ({ children, intensity = 10, className }) => {
-    const [isHover, setIsHover] = useState(false);
-    const x = useSpringValue(0);
-    const y = useSpringValue(0);
+    const [ref, inView] = useInView();
 
-    const move: MouseEventHandler<HTMLDivElement> = (evt) => {
-        if (!isHover) return;
+    const [isHover, setIsHover] = useState(false);
+
+    const msg = useMsg();
+
+    const springX = useSpringValue(0);
+    const springY = useSpringValue(0);
+
+    useEffect(() => {
+        if (!inView) return;
+
+        let lastAcceleration = { x: 0, y: 0, z: 0 };
+        let lastTime = Date.now();
+
+        const handleMotion = (event: DeviceMotionEvent) => {
+            const acc =
+                event.acceleration ?? event.accelerationIncludingGravity;
+
+            if (!acc) return;
+
+            const currentTime = Date.now();
+            const deltaTime = (currentTime - lastTime) / 1000;
+
+            const { x = 0, y = 0, z = 0 } = acc;
+
+            if (!x || !y || !z) return;
+
+            const deltaX = x - lastAcceleration.x;
+            const deltaY = y - lastAcceleration.y;
+
+            lastAcceleration = { x, y, z };
+            lastTime = currentTime;
+
+            const speedX = deltaX / deltaTime;
+            const speedY = deltaY / deltaTime;
+
+            const clampedX = Math.max(-1, Math.min(1, speedX / 10));
+            const clampedY = Math.max(-1, Math.min(1, speedY / 10));
+
+            springX.start(clampedX);
+            springY.start(-clampedY);
+        };
+
+        if (window.DeviceMotionEvent) {
+            window.addEventListener("devicemotion", handleMotion);
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const { requestPermission } = DeviceMotionEvent as any;
+
+            if (typeof requestPermission === "function") {
+                requestPermission()
+                    .then((permissionState: string) => {
+                        if (permissionState !== "granted") return;
+
+                        window.addEventListener("devicemotion", handleMotion);
+                    })
+                    .catch(console.error);
+            }
+        } else msg.info("DeviceMotionEvent is not supported");
+
+        return () => {
+            window.removeEventListener("devicemotion", handleMotion);
+        };
+    }, [inView, msg, springX, springY]);
+
+    const onMouseMove: MouseEventHandler<HTMLDivElement> = (evt) => {
+        if (!isHover || !inView) return;
 
         const { clientX, clientY } = evt.nativeEvent;
         const rect = evt.currentTarget.getBoundingClientRect();
@@ -30,26 +93,29 @@ const Swing: React.FC<{
         const clampedX = Math.max(-1, Math.min(1, relativeX));
         const clampedY = Math.max(-1, Math.min(1, relativeY));
 
-        x.start(clampedX);
-        y.start(-clampedY);
+        springX.start(clampedX);
+        springY.start(-clampedY);
+    };
+
+    const onMouseLeave: MouseEventHandler<HTMLDivElement> = () => {
+        setIsHover(false);
+        springX.start(0);
+        springY.start(0);
     };
 
     return (
         <div
-            onMouseOver={() => setIsHover(true)}
-            onMouseLeave={() => {
-                setIsHover(false);
-                x.start(0);
-                y.start(0);
-            }}
-            onMouseMove={move}
-            style={{ perspective: 800 }}
+            ref={ref}
             className={className?.outer}
+            style={{ perspective: 800 }}
+            onMouseOver={() => setIsHover(true)}
+            onMouseLeave={onMouseLeave}
+            onMouseMove={onMouseMove}
         >
             <animated.div
                 style={{
                     transform: to(
-                        [x, y],
+                        [springX, springY],
                         (x, y) =>
                             `rotateY(${x * intensity}deg) rotateX(${
                                 y * intensity
