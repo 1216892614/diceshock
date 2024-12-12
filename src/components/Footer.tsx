@@ -30,7 +30,7 @@ const Footer = () => {
                     <Logo className="w-32" />
 
                     <p>
-                        武汉骰子奇兵文化有限公司
+                        武汉奇兵文化有限公司
                         <br />
                         Wuhan DiceShock Culture Co., Ltd.
                         <br />
