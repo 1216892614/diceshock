@@ -10,6 +10,7 @@ import {
     Funnel,
     MagnifyingGlass,
     Scroll,
+    X,
 } from "@phosphor-icons/react/dist/ssr";
 
 import { toggleArr } from "@/utils/arr";
@@ -33,7 +34,7 @@ const Filter = () => {
 
     return (
         <>
-            <div className="w-full flex flex-col">
+            <div className="top-0 w-full flex flex-col z-10">
                 <div className="w-full flex flex-wrap justify-between">
                     <label className="input input-bordered input-lg flex items-center w-full m-2">
                         <input
@@ -49,7 +50,7 @@ const Filter = () => {
                         />
 
                         <button
-                            className="btn btn-md btn-square ml-3 lg:hidden"
+                            className="btn btn-md btn-square btn-ghost mx-3 lg:hidden"
                             onClick={() => dialogRef.current?.showModal()}
                         >
                             <Funnel className="size-8" weight="fill" />
@@ -62,8 +63,17 @@ const Filter = () => {
                     </label>
 
                     <dialog ref={dialogRef} className="modal">
-                        <div className="modal-box">
-                            <h3 className="font-bold text-lg">过滤器</h3>
+                        <div className="modal-box pt-0">
+                            <div className="modal-action flex items-center justify-between mb-5">
+                                <h3 className="font-bold text-lg">过滤器</h3>
+
+                                <form method="dialog">
+                                    <button className="btn btn-square btn-ghost mr-2">
+                                        <X size={24} weight="regular" />
+                                    </button>
+                                </form>
+                            </div>
+
                             <div className="w-full -mx-2 flex flex-col justify-center items-center overflow-hidden">
                                 <div className="m-2 join [&_svg]:hidden md:[&_svg]:block">
                                     <label className="btn btn-lg join-item bg-base-100 flex-row flex-nowrap text-nowrap">
@@ -194,9 +204,6 @@ const Filter = () => {
                                 </div>
                             </div>
                         </div>
-                        <form method="dialog" className="modal-backdrop">
-                            <button>close</button>
-                        </form>
                     </dialog>
 
                     <div className="m-2 join hidden lg:block">
