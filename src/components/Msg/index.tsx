@@ -26,15 +26,33 @@ export const useMsg = () => {
         },
     });
 
+    const containerMouseDown: React.MouseEventHandler<HTMLDivElement> = (
+        evt
+    ) => {
+        if (evt.button !== 1) return;
+
+        evt.preventDefault();
+
+        setComp(null);
+    };
+
     return {
         info: (tx: string) =>
             show(() =>
                 setComp(
-                    <animated.div style={styles} role="alert" className="alert">
+                    <animated.div
+                        onMouseDown={containerMouseDown}
+                        style={styles}
+                        role="alert"
+                        className="alert"
+                    >
                         <CheckCircle className="size-8 text-info" />
                         <span>{tx}</span>
                         <div>
-                            <button className="btn btn-sm btn-ghost btn-square">
+                            <button
+                                onClick={() => setComp(null)}
+                                className="btn btn-sm btn-ghost btn-square"
+                            >
                                 <X className="size-6" />
                             </button>
                         </div>
@@ -44,11 +62,19 @@ export const useMsg = () => {
         success: (tx: string) =>
             show(() =>
                 setComp(
-                    <animated.div style={styles} role="alert" className="alert">
+                    <animated.div
+                        onMouseDown={containerMouseDown}
+                        style={styles}
+                        role="alert"
+                        className="alert"
+                    >
                         <CheckCircle className="size-8 text-success" />
                         <span>{tx}</span>
                         <div>
-                            <button className="btn btn-sm btn-ghost btn-square">
+                            <button
+                                onClick={() => setComp(null)}
+                                className="btn btn-sm btn-ghost btn-square"
+                            >
                                 <X className="size-6" />
                             </button>
                         </div>
@@ -58,11 +84,19 @@ export const useMsg = () => {
         warning: (tx: string) =>
             show(() =>
                 setComp(
-                    <animated.div style={styles} role="alert" className="alert">
+                    <animated.div
+                        onMouseDown={containerMouseDown}
+                        style={styles}
+                        role="alert"
+                        className="alert"
+                    >
                         <CheckCircle className="size-8 text-warning" />
                         <span>{tx}</span>
                         <div>
-                            <button className="btn btn-sm btn-ghost btn-square">
+                            <button
+                                onClick={() => setComp(null)}
+                                className="btn btn-sm btn-ghost btn-square"
+                            >
                                 <X className="size-6" />
                             </button>
                         </div>
@@ -72,11 +106,19 @@ export const useMsg = () => {
         error: (tx: string) =>
             show(() =>
                 setComp(
-                    <animated.div style={styles} role="alert" className="alert">
+                    <animated.div
+                        onMouseDown={containerMouseDown}
+                        style={styles}
+                        role="alert"
+                        className="alert"
+                    >
                         <CheckCircle className="size-8 text-error" />
                         <span>{tx}</span>
                         <div>
-                            <button className="btn btn-sm btn-ghost btn-square">
+                            <button
+                                onClick={() => setComp(null)}
+                                className="btn btn-sm btn-ghost btn-square"
+                            >
                                 <X className="size-6" />
                             </button>
                         </div>
