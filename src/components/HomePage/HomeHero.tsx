@@ -26,12 +26,12 @@ const HomeHero = () => (
                     ))}
                 </div>
 
-                <div className="absolute top-48 left-5 bg-base-100 pb-20">
-                    <h1 className="font-bold flex text-8xl justify-center ">
+                <div className="absolute top-24 left-5">
+                    <h1 className="font-bold flex text-8xl justify-center bg-base-100">
                         DiceShock <Copyright />
                     </h1>
-                    <p className="text-3xl pl-2">桌游 · 日麻 · 主机</p>
-                    <p className="text-3xl pl-2">我们都是认真的</p>
+                    <p className="w-max text-3xl pl-2 bg-base-100">桌游 · 日麻 · 主机</p>
+                    <p className="w-max text-3xl pl-2 bg-base-100">我们都是认真的</p>
                 </div>
 
                 <div className="absolute bottom-0 w-[37rem] left-5 bg-base-100 flex justify-between pl-6 [&>*]:text-2xl hover:[&>*]:text-base-100 hover:[&>*]:bg-base-content">
