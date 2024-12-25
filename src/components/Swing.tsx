@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEventHandler, useEffect, useState } from "react";
+import { ComponentProps, MouseEventHandler, useEffect, useState } from "react";
 import { useSpringValue, animated, to, useInView } from "@react-spring/web";
 import { useMsg } from "./Msg";
 
@@ -8,7 +8,8 @@ const Swing: React.FC<{
     children: React.ReactNode;
     intensity?: number;
     className?: { outer?: string; inner?: string };
-}> = ({ children, intensity = 10, className }) => {
+    styleInner?: ComponentProps<typeof animated.div>["style"];
+}> = ({ children, intensity = 10, className, styleInner }) => {
     const [ref, inView] = useInView();
 
     const [isHover, setIsHover] = useState(false);
@@ -113,6 +114,7 @@ const Swing: React.FC<{
             onMouseMove={onMouseMove}
         >
             <animated.div
+                className={className?.inner}
                 style={{
                     transform: to(
                         [springX, springY],
@@ -121,6 +123,7 @@ const Swing: React.FC<{
                                 y * intensity
                             }deg)`
                     ),
+                    ...styleInner,
                 }}
             >
                 {children}
