@@ -54,12 +54,12 @@ const MahjongMatch = () => {
                     style={{
                         opacity: opacity1,
                     }}
-                    className="text-sm sm:text-xl mb-20 py-2 px-4"
+                    className="text-xl mb-20 py-2 px-4"
                 >
                     全国公式战参与道馆
                 </animated.p>
 
-                <ul ref={ref} className="timeline timeline-vertical">
+                <ul ref={ref} className="timeline timeline-vertical -translate-x-24 md:translate-x-0">
                     <animated.li
                         style={{
                             opacity: opacity2,
@@ -68,7 +68,7 @@ const MahjongMatch = () => {
                         <div className="timeline-middle text-primary">
                             <CheckCircle className="h-5 w-5" weight="fill" />
                         </div>
-                        <div className="timeline-end timeline-box">
+                        <div className="timeline-end timeline-box text-nowrap">
                             线下对局, 积累积分
                         </div>
                         <hr />
@@ -82,7 +82,7 @@ const MahjongMatch = () => {
                         <div className="timeline-middle text-primary">
                             <CheckCircle className="h-5 w-5" weight="fill" />
                         </div>
-                        <div className="timeline-end timeline-box">
+                        <div className="timeline-end timeline-box text-nowrap">
                             挑战场馆日麻个人赛
                         </div>
                         <hr />
@@ -96,7 +96,7 @@ const MahjongMatch = () => {
                         <div className="timeline-middle text-primary">
                             <CheckCircle className="h-5 w-5" weight="fill" />
                         </div>
-                        <div className="timeline-end timeline-box">
+                        <div className="timeline-end timeline-box text-nowrap">
                             参加全国立直麻将赛
                         </div>
                         <hr />
@@ -110,7 +110,7 @@ const MahjongMatch = () => {
                         <div className="timeline-middle text-primary">
                             <CheckCircle className="h-5 w-5" weight="fill" />
                         </div>
-                        <div className="timeline-end timeline-box">
+                        <div className="timeline-end timeline-box text-nowrap">
                             参加全国立直麻将大师巅峰赛
                         </div>
                     </animated.li>
