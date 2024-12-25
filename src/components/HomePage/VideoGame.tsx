@@ -71,7 +71,7 @@ const VideoGame = () => {
                             className="w-56 text-base-content/70 text-xl"
                         >
                             DiceShock© 为电玩区购置{" "}
-                            <span className="text-base-content"> 72 英寸</span>
+                            <span className="text-base-content"> 75 英寸</span>
                             超大电视, 配合
                             <span className="text-base-content"> 4K 高清</span>
                             分辨率,
