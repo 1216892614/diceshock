@@ -73,7 +73,7 @@ const Credits = () => {
                 <div className="my-5 flex [&]:text-xl">
                     <h5 className="font-bold">店长</h5>
                 </div>
-                <p className="text-xl">期待你的加入</p>
+                <p className="text-xl">小武</p>
             </div>
 
             <div ref={ref2} className="w-full h-[150vh]">
