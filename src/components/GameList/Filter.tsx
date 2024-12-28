@@ -34,9 +34,9 @@ const Filter = () => {
 
     return (
         <>
-            <div className="top-0 w-full flex flex-col z-10">
+            <div className="sticky top-1 col-span-full w-full flex flex-col z-20">
                 <div className="w-full flex flex-wrap justify-between">
-                    <label className="input input-bordered input-lg flex items-center w-full m-2">
+                    <label className="input input-bordered input-lg flex items-center w-full">
                         <input
                             type="text"
                             className="grow"
@@ -206,7 +206,7 @@ const Filter = () => {
                         </div>
                     </dialog>
 
-                    <div className="m-2 join hidden lg:block">
+                    <div className="mt-2 join hidden lg:block">
                         <label className="btn btn-lg join-item bg-base-100 flex-row flex-nowrap text-nowrap">
                             <input
                                 type="checkbox"
@@ -262,7 +262,7 @@ const Filter = () => {
                         </label>
                     </div>
 
-                    <div className="hidden lg:flex items-center flex-shrink-0 m-2 p-2 bg-base-100 rounded-b-none md:rounded-b-lg rounded-lg">
+                    <div className="hidden lg:flex items-center flex-shrink-0 mt-2 p-2 bg-base-100 rounded-b-none md:rounded-b-lg rounded-lg">
                         <div className="form-control hidden md:flex">
                             <label className="btn btn-md">
                                 <input

@@ -1,8 +1,14 @@
 "use client";
 
-import { Balloon, Headset, SquaresFour } from "@phosphor-icons/react/dist/ssr";
+import {
+    ArrowRight,
+    Balloon,
+    Headset,
+    SquaresFour,
+} from "@phosphor-icons/react/dist/ssr";
 import { useInView, useSpringValue, animated } from "@react-spring/web";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const GameList = dynamic(() => import("@/components/GameList"), {
@@ -150,8 +156,16 @@ const BoardGame = () => {
                 </div>
             </div>
 
-            <div className="relative mt-[55rem] lg:mt-[20rem] w-full h-screen">
-                <GameList className="w-auto h-[calc(100vh-5rem)] m-2" />
+            <div className="relative mt-[55rem] lg:mt-[20rem] m-2">
+                <GameList className="w-auto h-[calc(100vh-5rem)] m-2 overflow-y-hidden bg-gradient-to-b from-transparent pl-2" />
+
+                <div className="absolute top-0 size-full bg-gradient-to-b from-transparent to-base-100 pointer-events-none" />
+
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
+                    <Link href="/inventory" className="btn btn-lg btn-primary">
+                        查看库存 <ArrowRight weight="bold" size={24} />
+                    </Link>
+                </div>
             </div>
         </>
     );

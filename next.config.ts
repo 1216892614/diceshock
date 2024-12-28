@@ -6,7 +6,7 @@ const nextConfig = {
         return [
             {
                 source: "/api/gstonegames/:path*",
-                destination: "https://www.gstonegames.com/app/v2/:path*",
+                destination: "https://www.gstonegames.com/:path*/",
             },
         ];
     },
