@@ -63,8 +63,10 @@ const searchGames = async (filter?: FilterCfg, full?: boolean) => {
         ({ sch_name, eng_name, category, player_num }) => {
             if (
                 filter?.searchWords &&
-                !sch_name.includes(filter.searchWords) &&
-                !eng_name.includes(filter.searchWords)
+                !sch_name.includes(filter.searchWords.trim()) &&
+                !eng_name
+                    .toLocaleLowerCase()
+                    .includes(filter.searchWords.trim().toLocaleLowerCase())
             )
                 return false;
 
