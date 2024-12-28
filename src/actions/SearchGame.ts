@@ -58,48 +58,66 @@ export interface Mode {
     sch_domain_value: string;
 }
 
-const searchGames = async (filter?: FilterCfg) => {
-    console.log(filter);
-
-    return ownedGames.filter(({ sch_name, eng_name, category }) => {
-        if (
-            filter?.searchWords &&
-            !sch_name.includes(filter.searchWords) &&
-            !eng_name.includes(filter.searchWords)
-        )
-            return false;
-
-        if (
-            filter?.tags.includes("PARTY") &&
-            category.every(
-                ({ eng_domain_value }) =>
-                    !["Party", "Puzzle"].includes(eng_domain_value)
+const searchGames = async (filter?: FilterCfg, full?: boolean) => {
+    const filed = ownedGames.filter(
+        ({ sch_name, eng_name, category, player_num }) => {
+            if (
+                filter?.searchWords &&
+                !sch_name.includes(filter.searchWords) &&
+                !eng_name.includes(filter.searchWords)
             )
-        )
-            return false;
+                return false;
 
-        if (
-            filter?.tags.includes("RPG") &&
-            category.every(
-                ({ eng_domain_value }) =>
-                    !["American-style", "Role Playing"].includes(
-                        eng_domain_value
-                    )
+            if (
+                filter?.tags.includes("PARTY") &&
+                category.every(
+                    ({ eng_domain_value }) =>
+                        !["Party", "Puzzle"].includes(eng_domain_value)
+                )
             )
-        )
-            return false;
+                return false;
 
-        if (
-            filter?.tags.includes("SCORE_RACE") &&
-            category.every(
-                ({ eng_domain_value }) =>
-                    !["Euro-style", "Abstract"].includes(eng_domain_value)
+            if (
+                filter?.tags.includes("RPG") &&
+                category.every(
+                    ({ eng_domain_value }) =>
+                        !["American-style", "Role Playing"].includes(
+                            eng_domain_value
+                        )
+                )
             )
-        )
-            return false;
+                return false;
 
-        return true;
-    });
+            if (
+                filter?.tags.includes("SCORE_RACE") &&
+                category.every(
+                    ({ eng_domain_value }) =>
+                        !["Euro-style", "Abstract"].includes(eng_domain_value)
+                )
+            )
+                return false;
+
+            if (
+                filter?.numOfPlayers &&
+                filter.isBestNumOfPlayers &&
+                !player_num?.[filter.numOfPlayers]
+            )
+                return false;
+
+            if (
+                filter?.numOfPlayers &&
+                !filter.isBestNumOfPlayers &&
+                player_num?.[filter.numOfPlayers] !== 2
+            )
+                return false;
+
+            return true;
+        }
+    );
+
+    if (full) return filed;
+
+    return filed.slice(0, 20);
 };
 
 export default searchGames;

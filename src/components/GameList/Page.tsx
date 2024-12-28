@@ -20,7 +20,7 @@ const Page = () => {
 
         setTimeout(() => {
             if (ctrler.signal.aborted) return;
-            searchGames(filter).then((gs) => {
+            searchGames(filter, true).then((gs) => {
                 if (!Array.isArray(gs)) return;
 
                 setGames(gs);
