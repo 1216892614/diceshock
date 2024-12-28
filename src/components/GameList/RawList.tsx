@@ -12,6 +12,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
         ({
             id,
             sch_name,
+            eng_name,
             sch_cover_url,
             eng_cover_url,
             category,
@@ -38,9 +39,16 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                 </div>
 
                 <div className="game-meta absolute top-3 -left-2 [transform:translateZ(1rem)]">
-                    <h5 className="max-w-[8rem] sm:max-w-[12rem] text-sm sm:text-md shadow-lg text-nowrap overflow-hidden text-ellipsis bg-primary text-black font-bold px-2 py-1">
-                        {sch_name}
-                    </h5>
+                    <div
+                        className="tooltip"
+                        data-tip={`${sch_name || eng_name}${
+                            sch_name ? ` (${eng_name})` : ""
+                        }`}
+                    >
+                        <h5 className="max-w-[8rem] sm:max-w-[12rem] text-sm sm:text-md shadow-lg text-nowrap overflow-hidden text-ellipsis bg-primary text-black font-bold px-2 py-1">
+                            {sch_name || eng_name}
+                        </h5>
+                    </div>
                 </div>
 
                 <div className="game-meta absolute top-12 -left-2 [transform:translateZ(1rem)] w-[12rem] gap-1">
