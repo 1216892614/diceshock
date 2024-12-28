@@ -3,11 +3,12 @@ import Swing from "../Swing";
 
 import { BoardGame } from "@/apis/SearchGame";
 import LoadingImg from "./LoadingImg";
+import _ from "lodash";
 
 const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
     if (!games) return;
 
-    return games.map(
+    return _.unionBy(games, "id").map(
         (
             {
                 sch_name,
