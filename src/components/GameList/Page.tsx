@@ -1,36 +1,63 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import searchGames, { BoardGame } from "@/apis/SearchGame";
-import Filter from "@/components/GameList/Filter";
+import Filter, { filterCfgA } from "@/components/GameList/Filter";
 import RawList from "@/components/GameList/RawList";
 import { useInView } from "@react-spring/web";
+import { useAtomValue } from "jotai";
 
 const Page = () => {
     const [ref, isInView] = useInView();
 
+    const filter = useAtomValue(filterCfgA);
+
     const [games, setGames] = useState<BoardGame[] | null>(null);
-    const [isLoading, loading] = useState<boolean>(false);
     const [pageCount, setPageCount] = useState<number>(1);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const loading = useCallback(
+        (...args: Parameters<typeof searchGames>) =>
+            searchGames(...args).then((gs) => {
+                if (!Array.isArray(gs)) return;
+
+                setGames((games) =>
+                    Array.isArray(games) ? [...games, ...gs] : gs
+                );
+
+                setPageCount((c) => c + 1);
+
+                setIsLoading(false);
+            }),
+        []
+    );
 
     useEffect(() => {
-        if (!isInView || isLoading) return;
+        loading();
+    }, [loading]);
 
-        loading(true);
+    useEffect(() => {
+        if (!filter) return;
 
-        searchGames(pageCount).then((gs) => {
-            if (!Array.isArray(gs)) return;
+        setGames(null);
+        setPageCount(1);
+    }, [filter]);
 
-            setGames((games) =>
-                Array.isArray(games) ? [...games, ...gs] : gs
-            );
+    useEffect(() => {
+        if (!isInView) return;
 
-            setPageCount((c) => c + 1);
+        setIsLoading(true);
 
-            loading(false);
-        });
-    }, [isInView, isLoading, pageCount]);
+        const ctrler = new AbortController();
+
+        loading(pageCount, filter, ctrler.signal);
+
+        return () => {
+            ctrler.abort();
+            setIsLoading(false);
+        };
+    }, [filter, isInView, loading, pageCount]);
 
     return (
         <>

@@ -15,12 +15,14 @@ import {
 
 import { toggleArr } from "@/utils/arr";
 
-const filterCfgA = atomWithImmer<{
+export interface FilterCfg {
     tags: ("SCORE_RACE" | "RPG" | "PARTY")[];
     numOfPlayers: number | null;
     isBestNumOfPlayers: boolean;
     searchWords: string;
-}>({
+}
+
+export const filterCfgA = atomWithImmer<FilterCfg>({
     tags: [],
     numOfPlayers: null,
     isBestNumOfPlayers: false,

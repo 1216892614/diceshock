@@ -1,3 +1,5 @@
+import { FilterCfg } from "@/components/GameList/Filter";
+
 export interface BoardGame {
     is_mm: number;
     sch_cover_url: string;
@@ -53,27 +55,38 @@ export interface Mode {
     sch_domain_value: string;
 }
 
-const searchGames = async (page: number = 1) => {
+const searchGames = async (
+    page: number = 1,
+    filter?: FilterCfg,
+    abortSignal?: AbortSignal
+) => {
     const headers = new Headers();
 
     headers.append("Content-Type", "application/x-www-form-urlencoded");
 
-    const {
-        data: { game_list },
-    } = await fetch("/api/gstonegames/app/other_user_get_game/owned_games/", {
-        method: "POST",
-        headers,
-        body: JSON.stringify({
-            user_id: "124991",
-            page,
-        }),
-    }).then((r) => r.json());
+    const res = await fetch(
+        "/api/gstonegames/app/other_user_get_game/owned_games/",
+        {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+                user_id: "124991",
+                page,
+                name: Boolean(filter?.searchWords)
+                    ? filter?.searchWords
+                    : void 0,
+            }),
+            signal: abortSignal,
+        }
+    )
+        .then((r) => r.json())
+        .catch(console.log);
 
-    if (!Array.isArray(game_list)) {
+    if (!Array.isArray(res?.data?.game_list)) {
         return null;
     }
 
-    return game_list as BoardGame[];
+    return res?.data?.game_list as BoardGame[];
 };
 
 export default searchGames;
