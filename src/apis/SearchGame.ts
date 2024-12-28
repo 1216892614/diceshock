@@ -64,18 +64,30 @@ const searchGames = async (
 
     headers.append("Content-Type", "application/x-www-form-urlencoded");
 
+    const body = {
+        user_id: "124991",
+        page,
+        name: Boolean(filter?.searchWords) ? filter?.searchWords : void 0,
+        category: filter &&
+            filter.tags.length && [
+                ...(filter?.tags.includes("PARTY") ? [322] : []),
+                ...(filter?.tags.includes("SCORE_RACE") ? [288, 321, 323] : []),
+                ...(filter?.tags.includes("PARTY") ? [287, 318] : []),
+            ],
+        support_num:
+            filter && !filter.isBestNumOfPlayers && filter.numOfPlayers,
+        recommend_num:
+            filter && filter.isBestNumOfPlayers && filter.numOfPlayers,
+    };
+
+    console.log(body);
+
     const res = await fetch(
         "/api/gstonegames/app/other_user_get_game/owned_games/",
         {
             method: "POST",
             headers,
-            body: JSON.stringify({
-                user_id: "124991",
-                page,
-                name: Boolean(filter?.searchWords)
-                    ? filter?.searchWords
-                    : void 0,
-            }),
+            body: JSON.stringify(body),
             signal: abortSignal,
         }
     )

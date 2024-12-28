@@ -9,19 +9,17 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
     if (!games) return;
 
     return _.unionBy(games, "id").map(
-        (
-            {
-                sch_name,
-                sch_cover_url,
-                eng_cover_url,
-                category,
-                mode,
-                gstone_rating,
-            },
-            idx
-        ) => (
+        ({
+            id,
+            sch_name,
+            sch_cover_url,
+            eng_cover_url,
+            category,
+            mode,
+            gstone_rating,
+        }) => (
             <Swing
-                key={idx}
+                key={id}
                 className={{
                     outer: "size-min place-self-center [&_.game-meta]:hover:flex [&_.cover]:hover:flex [&_.game-meta:not(.hidden)]:flex [&_.game-meta:not(.hidden)]:sm:hidden hover:z-10",
                     inner: "size-min [transform-style:preserve-3d]",
