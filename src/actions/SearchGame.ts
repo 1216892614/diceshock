@@ -58,8 +58,10 @@ export interface Mode {
     sch_domain_value: string;
 }
 
-const searchGames = async (filter?: FilterCfg) =>
-    ownedGames.filter(({ sch_name, eng_name, category }) => {
+const searchGames = async (filter?: FilterCfg) => {
+    console.log(filter);
+
+    return ownedGames.filter(({ sch_name, eng_name, category }) => {
         if (
             filter?.searchWords &&
             !sch_name.includes(filter.searchWords) &&
@@ -98,5 +100,6 @@ const searchGames = async (filter?: FilterCfg) =>
 
         return true;
     });
+};
 
 export default searchGames;
