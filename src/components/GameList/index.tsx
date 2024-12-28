@@ -1,16 +1,32 @@
 "use client";
 
-import Filter from "./Filter";
+import Filter, { filterCfgA } from "./Filter";
 import React, { useEffect, useState } from "react";
 import searchGames, { BoardGame } from "@/actions/SearchGame";
 import RawList from "./RawList";
+import { useAtomValue } from "jotai";
 
 const GameList: React.FC<{ className?: string }> = ({ className }) => {
+    const filter = useAtomValue(filterCfgA);
+
     const [games, setGames] = useState<BoardGame[] | null>(null);
 
     useEffect(() => {
-        searchGames().then(setGames);
-    }, []);
+        const ctrler = new AbortController();
+
+        setTimeout(() => {
+            if (ctrler.signal.aborted) return;
+            searchGames(filter, true).then((gs) => {
+                if (!Array.isArray(gs)) return;
+
+                setGames(gs);
+            });
+        }, 500);
+
+        return () => {
+            ctrler.abort();
+        };
+    }, [filter]);
 
     return (
         <div
