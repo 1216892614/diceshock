@@ -102,14 +102,14 @@ const searchGames = async (filter?: FilterCfg, full?: boolean) => {
             if (
                 filter?.numOfPlayers &&
                 filter.isBestNumOfPlayers &&
-                !player_num?.[filter.numOfPlayers]
+                player_num?.[filter.numOfPlayers] !== 2
             )
                 return false;
 
             if (
                 filter?.numOfPlayers &&
                 !filter.isBestNumOfPlayers &&
-                player_num?.[filter.numOfPlayers] !== 2
+                !player_num?.[filter.numOfPlayers]
             )
                 return false;
 

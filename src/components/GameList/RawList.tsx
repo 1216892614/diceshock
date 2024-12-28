@@ -50,7 +50,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                                 key={eng_domain_value}
                                 className="bg-accent text-black text-sm font-bold px-1 shadow-lg"
                             >
-                                {sch_domain_value}
+                                {sch_domain_value || eng_domain_value}
                             </span>
                         )
                     )}
