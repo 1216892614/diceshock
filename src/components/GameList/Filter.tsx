@@ -27,14 +27,16 @@ const filterCfgA = atomWithImmer<{
     searchWords: "",
 });
 
-const Filter = () => {
+const Filter: React.FC<{ className?: string }> = ({ className }) => {
     const [filter, setFilter] = useAtom(filterCfgA);
 
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     return (
         <>
-            <div className="sticky top-1 col-span-full w-full flex flex-col z-20">
+            <div
+                className={`sticky top-1 md-20 col-span-full w-full flex flex-col z-20 ${className}`}
+            >
                 <div className="w-full flex flex-wrap justify-between">
                     <label className="input input-bordered input-lg flex items-center w-full">
                         <input

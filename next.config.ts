@@ -10,6 +10,14 @@ const nextConfig = {
             },
         ];
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "oss.gstonegames.com",
+            },
+        ],
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/i,
