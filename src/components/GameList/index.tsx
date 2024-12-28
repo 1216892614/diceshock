@@ -2,7 +2,7 @@
 
 import Filter from "./Filter";
 import React, { useEffect, useState } from "react";
-import searchGames, { BoardGame } from "@/apis/SearchGame";
+import searchGames, { BoardGame } from "@/actions/SearchGame";
 import RawList from "./RawList";
 
 const GameList: React.FC<{ className?: string }> = ({ className }) => {

@@ -2,62 +2,32 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-import searchGames, { BoardGame } from "@/apis/SearchGame";
+import searchGames, { BoardGame } from "@/actions/SearchGame";
 import Filter, { filterCfgA } from "@/components/GameList/Filter";
 import RawList from "@/components/GameList/RawList";
-import { useInView } from "@react-spring/web";
 import { useAtomValue } from "jotai";
+import { debounce } from "lodash";
 
 const Page = () => {
-    const [ref, isInView] = useInView();
-
     const filter = useAtomValue(filterCfgA);
 
     const [games, setGames] = useState<BoardGame[] | null>(null);
-    const [pageCount, setPageCount] = useState<number>(1);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-
-    const loading = useCallback(
-        (...args: Parameters<typeof searchGames>) =>
-            searchGames(...args).then((gs) => {
-                if (!Array.isArray(gs)) return;
-
-                setGames((games) =>
-                    Array.isArray(games) ? [...games, ...gs] : gs
-                );
-
-                setPageCount((c) => c + 1);
-
-                setIsLoading(false);
-            }),
-        []
-    );
 
     useEffect(() => {
-        loading();
-    }, [loading]);
+        const debouncedUpdate = debounce(
+            () =>
+                searchGames(filter).then((gs) => {
+                    if (!Array.isArray(gs)) return;
 
-    useEffect(() => {
-        if (!filter) return;
-
-        setGames(null);
-        setPageCount(1);
-    }, [filter]);
-
-    useEffect(() => {
-        if (!isInView) return;
-
-        setIsLoading(true);
-
-        const ctrler = new AbortController();
-
-        loading(pageCount, filter, ctrler.signal);
+                    setGames(gs);
+                }),
+            1000
+        );
 
         return () => {
-            ctrler.abort();
-            setIsLoading(false);
+            debouncedUpdate.cancel();
         };
-    }, [filter, isInView, loading, pageCount]);
+    }, [filter]);
 
     return (
         <>
@@ -65,18 +35,6 @@ const Page = () => {
 
             <div className="relative bg-neutral mt-10 py-8 rounded-xl shadow-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-2 p-2 overflow-y-auto overflow-x-hidden w-auto mx-2">
                 <RawList games={games} />
-            </div>
-
-            <div
-                ref={ref}
-                className="w-full min-h-2 flex justify-center items-center py-10"
-            >
-                {isLoading && (
-                    <button className="btn">
-                        <span className="loading loading-spinner"></span>
-                        loading
-                    </button>
-                )}
             </div>
         </>
     );

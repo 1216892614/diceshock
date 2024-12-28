@@ -1,7 +1,7 @@
 import React from "react";
 import Swing from "../Swing";
 
-import { BoardGame } from "@/apis/SearchGame";
+import { BoardGame } from "@/actions/SearchGame";
 import LoadingImg from "./LoadingImg";
 import _ from "lodash";
 
