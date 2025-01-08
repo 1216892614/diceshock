@@ -23,10 +23,10 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                 key={id}
                 className={{
                     outer: "size-min place-self-center [&_.game-meta]:hover:flex [&_.cover]:hover:flex [&_.game-meta:not(.hidden)]:flex [&_.game-meta:not(.hidden)]:sm:hidden hover:z-10",
-                    inner: "size-min [transform-style:preserve-3d]",
+                    inner: "size-min m-2 w-[7.6rem] h-[8rem] sm:w-[12rem] sm:h-[15rem] [transform-style:preserve-3d] ",
                 }}
             >
-                <div className="card relative m-2 w-[7.6rem] h-[8rem] sm:w-[12rem] sm:h-[15rem] bg-black overflow-hidden">
+                <div className="card size-full relative bg-base-300 overflow-hidden">
                     <LoadingImg
                         className="size-full object-cover"
                         width={1600}

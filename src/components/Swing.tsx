@@ -126,7 +126,7 @@ const Swing: React.FC<{
                     ...styleInner,
                 }}
             >
-                {children}
+                {inView && children}
             </animated.div>
         </div>
     );
