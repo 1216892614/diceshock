@@ -79,7 +79,7 @@ const Agents = () => {
                         >
                             <Swing
                                 className={{
-                                    inner: "card bg-base-200 w-96 shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
+                                    inner: "card bg-base-200 w-96 h-[35rem] shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
                                 }}
                             >
                                 <figure className="[transform:translateZ(3rem)]">
@@ -114,7 +114,7 @@ const Agents = () => {
                         >
                             <Swing
                                 className={{
-                                    inner: "card bg-base-200 w-96 shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
+                                    inner: "card bg-base-200 w-96 h-[35rem] shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
                                 }}
                             >
                                 <figure className="[transform:translateZ(3rem)]">
@@ -149,7 +149,7 @@ const Agents = () => {
                         >
                             <Swing
                                 className={{
-                                    inner: "card bg-base-200 w-96 shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
+                                    inner: "card bg-base-200 w-96 h-[35rem] shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
                                 }}
                             >
                                 <figure className="[transform:translateZ(3rem)]">
@@ -182,7 +182,7 @@ const Agents = () => {
                         >
                             <Swing
                                 className={{
-                                    inner: "card bg-base-200 w-96 shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
+                                    inner: "card bg-base-200 w-96 h-[35rem] shadow-xl mb-10 mx-5 [transform-style:preserve-3d]",
                                 }}
                             >
                                 <figure className="[transform:translateZ(3rem)]">
