@@ -27,7 +27,7 @@ const Credits = () => {
                     </animated.div>
 
                     <animated.div
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl"
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-2 w-full text-xl text-center"
                         style={{
                             opacity: progress1.to((p) =>
                                 Math.min(
@@ -90,7 +90,7 @@ const Credits = () => {
                     </animated.div>
 
                     <animated.div
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-nowrap"
                         style={{
                             opacity: progress2.to((p) => reRange(p, 5, COUNT)),
                         }}
