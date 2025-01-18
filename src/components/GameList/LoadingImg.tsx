@@ -11,7 +11,7 @@ const LoadingImg: React.FC<React.ComponentProps<typeof Image>> = (props) => {
             }
             {...props}
             alt={props.alt}
-            onLoadingComplete={() => loading(false)}
+            onLoad={() => loading(false)}
         />
     );
 };
