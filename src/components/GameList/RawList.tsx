@@ -22,8 +22,8 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
             <Swing
                 key={id}
                 className={{
-                    outer: "size-min place-self-center [&_.game-meta]:hover:flex [&_.cover]:hover:flex [&_.game-meta:not(.hidden)]:flex [&_.game-meta:not(.hidden)]:sm:hidden hover:z-10",
-                    inner: "size-min m-2 w-[7.6rem] h-[8rem] sm:w-[12rem] sm:h-[15rem] [transform-style:preserve-3d] ",
+                    outer: "size-min place-self-center [&_.game-meta]:hover:flex [&_.cover]:hover:flex hover:z-10",
+                    inner: "size-min m-2 w-[7.6rem] h-[8rem] sm:w-[12rem] sm:h-[15rem] lg:w-[18vw] lg:h-[22.5vw] [transform-style:preserve-3d] ",
                 }}
             >
                 <div className="card size-full relative bg-base-300 overflow-hidden">
@@ -38,7 +38,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                     <div className="cover hidden absolute top-0 size-full bg-gradient-to-b from-black/10 to-black/70" />
                 </div>
 
-                <div className="game-meta absolute top-3 -left-2 [transform:translateZ(1rem)]">
+                <div className="absolute top-3 -left-2 [transform:translateZ(1rem)]">
                     <div
                         className="tooltip"
                         data-tip={`${sch_name || eng_name}${
@@ -51,7 +51,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                     </div>
                 </div>
 
-                <div className="game-meta absolute top-12 -left-2 [transform:translateZ(1rem)] w-[12rem] gap-1">
+                <div className="absolute top-12 -left-2 [transform:translateZ(1rem)] w-[12rem] gap-1">
                     {(Array.isArray(category) ? category : [category]).map(
                         ({ sch_domain_value, eng_domain_value }) => (
                             <span
@@ -75,19 +75,23 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                         .slice(0, 2)}
                 </div>
 
-                <div
-                    className="game-meta hidden justify-center items-center absolute -bottom-2 -right-2 [transform:translateZ(1rem)] radial-progress text-primary border-0"
-                    style={
-                        { "--value": gstone_rating * 10 } as React.CSSProperties
-                    }
-                    role="progressbar"
-                >
-                    <span className="text-xl font-bold">
-                        {gstone_rating.toFixed(1)}
-                    </span>
+                {gstone_rating >= 0.5 && (
+                    <div
+                        className="hidden lg:block justify-center items-center absolute -bottom-2 -right-2 [transform:translateZ(1rem)] radial-progress text-primary border-0"
+                        style={
+                            {
+                                "--value": gstone_rating * 10,
+                            } as React.CSSProperties
+                        }
+                        role="progressbar"
+                    >
+                        <span className="text-xl font-bold">
+                            {gstone_rating.toFixed(1)}
+                        </span>
 
-                    <span className="text-xs">/10</span>
-                </div>
+                        <span className="text-xs">/10</span>
+                    </div>
+                )}
             </Swing>
         )
     );
