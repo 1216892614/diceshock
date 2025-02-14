@@ -77,7 +77,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
 
                 {gstone_rating >= 0.5 && (
                     <div
-                        className="hidden lg:block justify-center items-center absolute -bottom-2 -right-2 [transform:translateZ(1rem)] radial-progress text-primary border-0"
+                        className="hidden lg:flex justify-center items-center absolute -bottom-2 -right-2 [transform:translateZ(1rem)] radial-progress text-primary border-0"
                         style={
                             {
                                 "--value": gstone_rating * 10,
