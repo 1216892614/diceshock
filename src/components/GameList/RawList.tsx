@@ -23,7 +23,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                 key={id}
                 className={{
                     outer: "size-min place-self-center [&_.game-meta]:hover:flex [&_.cover]:hover:flex hover:z-10",
-                    inner: "size-min m-2 w-[7.6rem] h-[8rem] sm:w-[12rem] sm:h-[15rem] lg:w-[18vw] lg:h-[22.5vw] [transform-style:preserve-3d] ",
+                    inner: "size-min m-2 w-[7.6rem] h-[8rem] sm:w-[12rem] sm:h-[15rem] lg:w-[18vw] lg:h-[22.5vw] max-w-[24rem] max-h-[30rem] [transform-style:preserve-3d] ",
                 }}
             >
                 <div className="card size-full relative bg-base-300 overflow-hidden">
@@ -51,12 +51,12 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                     </div>
                 </div>
 
-                <div className="absolute top-12 -left-2 [transform:translateZ(1rem)] w-[12rem] gap-1">
+                <div className="absolute top-12 -left-2 [transform:translateZ(1rem)] w-[12rem]">
                     {(Array.isArray(category) ? category : [category]).map(
                         ({ sch_domain_value, eng_domain_value }) => (
                             <span
                                 key={eng_domain_value}
-                                className="bg-accent text-black text-sm font-bold px-1 shadow-lg"
+                                className="bg-accent text-black text-sm font-bold px-1 shadow-lg mr-1"
                             >
                                 {sch_domain_value || eng_domain_value}
                             </span>
@@ -67,7 +67,7 @@ const RawList: React.FC<{ games: BoardGame[] | null }> = ({ games }) => {
                         .map(({ sch_domain_value, eng_domain_value }) => (
                             <span
                                 key={eng_domain_value}
-                                className="bg-primary text-black text-sm font-bold px-1 shadow-lg"
+                                className="bg-primary text-black text-sm font-bold px-1 shadow-lg mr-1"
                             >
                                 {sch_domain_value}
                             </span>
