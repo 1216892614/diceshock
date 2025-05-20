@@ -86,7 +86,9 @@ const BoardGame = () => {
                             className="w-56 text-base-content/70 text-xl"
                         >
                             DiceShock© 拥有
-                            <span className="text-base-content">上百款</span>
+                            <span className="text-base-content">
+                                超过 600 款
+                            </span>
                             精挑细选的桌游. 无论是一场
                             <span className="text-base-content">冒险</span>,
                             一局
