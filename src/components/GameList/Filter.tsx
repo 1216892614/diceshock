@@ -266,7 +266,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                         </label>
                     </div>
 
-                    <div className="hidden lg:flex items-center flex-shrink-0 mt-2 bg-base-100 rounded-b-none md:rounded-b-lg rounded-lg">
+                    <div className="hidden lg:flex items-center flex-shrink-0 mt-2 px-1 bg-base-100 rounded-b-none md:rounded-b-lg rounded-lg">
                         <div className="form-control hidden md:flex">
                             <label className="btn btn-md">
                                 <input
