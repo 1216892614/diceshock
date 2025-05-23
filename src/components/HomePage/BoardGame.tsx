@@ -64,7 +64,7 @@ const BoardGame = () => {
                     </p>
                 </h2>
 
-                <div className="absolute left-1/2 lg:left-[40vw] top-[15rem] lg:top-[5vh] h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
+                <div className="absolute left-1/2 lg:left-[40vw] top-[15rem] lg:top-0 h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
                     <animated.div
                         style={{
                             opacity: opacity1,

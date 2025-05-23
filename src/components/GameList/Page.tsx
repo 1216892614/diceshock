@@ -42,7 +42,7 @@ const Page = () => {
                     <span className="loading loading-spinner" />
                 </div>
             ) : (
-                <div className="relative bg-neutral mt-10 py-8 rounded-xl shadow-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-2 p-2 overflow-y-auto overflow-x-hidden w-auto min-h-[calc(100vh-40rem)] mx-2">
+                <div className="relative bg-neutral mt-10 py-8 rounded-xl shadow-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-2 p-2 w-auto min-h-[calc(100vh-40rem)] mx-2">
                     <RawList games={games} />
                 </div>
             )}

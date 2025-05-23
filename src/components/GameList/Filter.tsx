@@ -67,9 +67,9 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                     </label>
 
                     <dialog ref={dialogRef} className="modal">
-                        <div className="modal-box pt-0">
+                        <div className="modal-box pt-0 px-0">
                             <div className="modal-action flex items-center justify-between mb-5">
-                                <h3 className="font-bold text-lg">过滤器</h3>
+                                <h3 className="font-bold text-lg ml-4">过滤器</h3>
 
                                 <form method="dialog">
                                     <button className="btn btn-square btn-ghost mr-2">
@@ -80,7 +80,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
 
                             <div className="w-full -mx-2 flex flex-col justify-center items-center overflow-hidden">
                                 <div className="m-2 join [&_svg]:hidden md:[&_svg]:block">
-                                    <label className="btn btn-lg join-item bg-base-100 flex-row flex-nowrap text-nowrap">
+                                    <label className="btn sm:btn-xl join-item bg-base-100 flex-row flex-nowrap text-nowrap">
                                         <input
                                             type="checkbox"
                                             className="checkbox"
@@ -100,7 +100,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                                         <Confetti className="h-7 w-7" />
                                     </label>
 
-                                    <label className="btn btn-lg join-item bg-base-100 flex-row flex-nowrap text-nowrap">
+                                    <label className="btn sm:btn-xl join-item bg-base-100 flex-row flex-nowrap text-nowrap">
                                         <input
                                             type="checkbox"
                                             className="checkbox"
@@ -120,7 +120,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                                         <FlagBanner className="h-7 w-7" />
                                     </label>
 
-                                    <label className="btn btn-lg join-item bg-base-100 flex-row flex-nowrap text-nowrap">
+                                    <label className="btn sm:btn-xl join-item bg-base-100 flex-row flex-nowrap text-nowrap">
                                         <input
                                             type="checkbox"
                                             className="checkbox"
@@ -185,8 +185,8 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                                         </button>
                                     </div>
 
-                                    <div className="form-control -mt-3">
-                                        <label className="btn btn-lg rounded-t-none m-2 bg-base-100">
+                                    <div className="form-control -mt-3 mx-4">
+                                        <label className="btn btn-lg w-full rounded-t-none m-2 bg-base-100">
                                             <input
                                                 type="checkbox"
                                                 className="checkbox"
@@ -210,7 +210,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                         </div>
                     </dialog>
 
-                    <div className="mt-2 join hidden lg:block">
+                    <div className="mt-2 join hidden lg:flex items-center">
                         <label className="btn btn-lg join-item bg-base-100 flex-row flex-nowrap text-nowrap">
                             <input
                                 type="checkbox"
@@ -266,7 +266,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                         </label>
                     </div>
 
-                    <div className="hidden lg:flex items-center flex-shrink-0 mt-2 p-2 bg-base-100 rounded-b-none md:rounded-b-lg rounded-lg">
+                    <div className="hidden lg:flex items-center flex-shrink-0 mt-2 bg-base-100 rounded-b-none md:rounded-b-lg rounded-lg">
                         <div className="form-control hidden md:flex">
                             <label className="btn btn-md">
                                 <input

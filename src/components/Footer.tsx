@@ -93,9 +93,9 @@ const Footer = () => {
                 onClick={() =>
                     container?.scrollTo?.({ top: 0, behavior: "smooth" })
                 }
-                className="w-full h-[4rem] bg-primary hover:bg-base-100 [&>h5]:hover:text-base-content flex justify-between items-center"
+                className="w-full h-[4rem] bg-primary hover:bg-base-100 hover:[&>h5]:text-base-content flex justify-between items-center"
             >
-                <h5 className="mx-auto text-black text-xl">返回顶部</h5>
+                <h5 className="mx-auto text-base-200 text-xl">返回顶部</h5>
                 <div className="w-[4rem] h-full bg-base-100 flex justify-center items-center">
                     <ArrowUp className="size-10" />
                 </div>

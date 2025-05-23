@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Msg from "@/components/Msg";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
     title: "DiceShock",
@@ -23,21 +24,23 @@ export default function RootLayout({
                 <link rel="icon" href="/svg/favicon.svg" />
             </head>
             <body className="antialiased w-screen h-screen">
-                <div
-                    id="[[SCROLL-CONTAINER]]"
-                    className="size-full relative overflow-x-hidden overflow-y-auto"
-                >
-                    <Header />
+                <Providers>
+                    <div
+                        id="[[SCROLL-CONTAINER]]"
+                        className="size-full relative overflow-x-hidden overflow-y-auto"
+                    >
+                        <Header />
 
-                    {children}
+                        {children}
 
-                    <Footer />
+                        <Footer />
 
-                    <Msg />
-                </div>
+                        <Msg />
+                    </div>
 
-                <Analytics />
-                <SpeedInsights />
+                    <Analytics />
+                    <SpeedInsights />
+                </Providers>
             </body>
         </html>
     );

@@ -86,7 +86,7 @@ const getMidMenu = (pages: PageType[]) =>
 const Header = () => (
     <header className="sticky w-full top-0 left-0 z-50">
         <nav className="navbar bg-base-100/70 backdrop-blur-xl">
-            <div className="navbar-start">
+            <div className="navbar-start gap-1">
                 <div className="dropdown">
                     <div
                         tabIndex={0}
@@ -102,7 +102,8 @@ const Header = () => (
                         {getSideMenu(PAGES)}
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost text-xl">
+
+                <Link href="/" className="btn btn-ghost px-0">
                     <LongTextLogo className="h-full" />
                 </Link>
             </div>

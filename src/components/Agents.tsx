@@ -1,8 +1,9 @@
 "use client";
 
 import { useInView, useSpringValue, animated } from "@react-spring/web";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 
 import TableAgent from "@/assets/svg/agents/DiceshockItems_table-agent-icon.svg";
 import TablePassCC from "@/assets/svg/agents/DiceshockItems_table-pass-cc-icon.svg";
@@ -12,7 +13,7 @@ import AgentsChannel from "@/assets/svg/agents_channel.svg";
 import AgentLogo from "@/assets/svg/agent-logo.svg";
 import Swing from "./Swing";
 
-const Agents = () => {
+const Agents: React.FC<{ className?: string }> = ({ className }) => {
     const [ref, inView] = useInView();
 
     const opacity1 = useSpringValue(0.1, {
@@ -51,7 +52,10 @@ const Agents = () => {
                     opacity: opacity1,
                     scale: opacity1.to((p) => 0.8 + 0.2 * p),
                 }}
-                className="w-full py-52 flex flex-col justify-center items-center"
+                className={clsx(
+                    "w-full pb-52 flex flex-col justify-center items-center",
+                    className
+                )}
             >
                 <AgentLogo className="w-10 mb-4" />
                 <h2 className="text-bg sm:text-xl md:text-3xl mb-5">

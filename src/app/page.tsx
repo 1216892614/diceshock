@@ -48,7 +48,7 @@ export default function Home() {
 
             <VideoGameList />
 
-            <Agents />
+            <Agents className="pt-[30rem]" />
 
             <Credits />
         </main>

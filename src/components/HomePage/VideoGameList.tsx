@@ -14,7 +14,7 @@ const VideoGameList = () => {
     const { ref, progress } = useSticky();
 
     return (
-        <div ref={ref} className="w-full h-[150vw] md:h-[200vh] mb-[52vh] md:mb-[40vh] mt-20">
+        <div ref={ref} className="w-full h-[250vw] md:h-[220vh] mb-[52vh] md:mb-[40vh] mt-20 pt-20">
             <div className="w-full h-[60vw] max-h-[35rem] mt-[40rem] lg:mt-0 relative [perspective:1000px]">
                 <animated.div
                     style={{

@@ -34,13 +34,13 @@ const VideoGame = () => {
             opacity2.start(0);
             opacity3.start(0);
             return;
-        } 
+        }
     }, [inViewEnd, inViewStart, opacity1, opacity2, opacity3]);
 
     return (
         <>
             <h2 id="VideoGame" style={{ fontSize: 0 }}>
-                桌游
+                主机
             </h2>
 
             <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col mt-[4rem] [&:not(.text-primary)]:text-neutral-content">
@@ -49,7 +49,7 @@ const VideoGame = () => {
                     <p className="text-primary">开最快的车, 战最烈的斗</p>
                 </h2>
 
-                <div className="absolute left-1/2 lg:left-[40vw] top-[20rem] lg:top-[5vh] h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
+                <div className="absolute left-1/2 lg:left-[40vw] top-[20rem] lg:top-0 h-[65rem] w-[70vw] flex flex-col lg:flex-row items-center justify-between -translate-x-1/2">
                     <animated.div
                         style={{
                             opacity: opacity1,
