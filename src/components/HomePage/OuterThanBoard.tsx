@@ -27,10 +27,10 @@ const OuterThanBoard = () => {
 
     return (
         <div className="w-full h-[250vh]" ref={ref}>
-            <div className="w-full h-screen sticky top-0 flex items-center">
+            <div className="w-full h-screen sticky top-0">
                 <ZdogShapes className="cursor-move w-[80vw] h-[80vw] md:w-[80vh] md:h-[80vh] pointer-events-none md:pointer-events-auto opacity-70 lg:opacity-100 absolute right-1/2 lg:right-10 top-1/2 translate-x-1/2 lg:-translate-x-0 -translate-y-1/2" />
 
-                <div className="absolute left-4 top-[5rem] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
+                <div className="absolute left-4 top-[5rem] md:top-[10rem] [&]:text-5xl md:[&]:text-7xl [&]:text-base-content">
                     <h2>
                         用心之处,
                         <br className="md:hidden" />{" "}
@@ -38,7 +38,7 @@ const OuterThanBoard = () => {
                     </h2>
                 </div>
 
-                <div className="absolute left-10 top-[12rem] flex flex-col chat chat-start">
+                <div className="absolute left-10 top-[12rem] md:top-[17rem] flex flex-col chat chat-start">
                     {texts.map((tx, idx) => (
                         <animated.p
                             key={idx}
