@@ -307,7 +307,7 @@ const Filter: React.FC<{ className?: string }> = ({ className }) => {
                                     draft.numOfPlayers = null;
                                 })
                             }
-                            className="btn btn-md w-20 hover:btn-secondary [&_.num]:hover:hidden [&_.del]:hidden [&_.del]:hover:block"
+                            className="btn btn-md w-20 hover:btn-secondary hover:[&_.num]:hidden [&_.del]:hidden hover:[&_.del]:block"
                         >
                             {typeof filter.numOfPlayers === "number" ? (
                                 <>
