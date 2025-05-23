@@ -4,8 +4,7 @@ import React, { useCallback, useEffect, useRef } from "react";
 import cookie from "js-cookie";
 
 const ThemeSwitch: React.FC<React.PropsWithChildren> = ({ children }) => {
-    const change = useCallback((evt: Event) => {
-        const isLightTheme = (evt.target as HTMLInputElement).checked;
+    const change = useCallback((isLightTheme: boolean) => {
         document.documentElement.classList.toggle("dark", !isLightTheme);
         cookie.set("prefer-color-scheme", JSON.stringify(isLightTheme), {
             expires: 365,
@@ -19,10 +18,15 @@ const ThemeSwitch: React.FC<React.PropsWithChildren> = ({ children }) => {
 
         if (!input) return;
 
-        input.addEventListener("change", change);
+        change(input.checked);
+
+        const onChange = (evt: Event) =>
+            change((evt.target as HTMLInputElement).checked);
+
+        input.addEventListener("change", onChange);
 
         return () => {
-            input.removeEventListener("change", change);
+            input.removeEventListener("change", onChange);
         };
     }, [change]);
 
