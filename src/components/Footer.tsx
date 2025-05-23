@@ -25,7 +25,7 @@ const Footer = () => {
                 }}
             />
 
-            <footer className="footer bg-neutral text-neutral-content p-10">
+            <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
                 <aside>
                     <Logo className="w-32" />
 
