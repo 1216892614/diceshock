@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: "Boardgames-VideoGame-JPMahjong",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
