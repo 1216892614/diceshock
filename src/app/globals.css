@@ -58,7 +58,7 @@
 
     /* 深度和噪点 */
     --depth: 1;
-    --noise: 0;
+    --noise: 1;
 }
 
 @plugin "daisyui/theme" {
@@ -116,7 +116,7 @@
 
     /* 深度和噪点 */
     --depth: 1;
-    --noise: 0;
+    --noise: 1;
 }
 
 @font-face {

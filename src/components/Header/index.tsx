@@ -2,7 +2,7 @@ import React from "react";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "../ThemeSwitch";
 import LongTextLogo from "@/assets/svg/black-simplify-with-text-logo.svg";
 
 type PageType = {
@@ -23,13 +23,6 @@ const PAGES: PageType[] = [
     {
         title: "联系我们",
         href: `/contact-us`,
-    },
-    {
-        title: "关于我们",
-        children: [
-            { title: "加入我们", href: "/" },
-            { title: "服务条款", href: "/" },
-        ],
     },
 ];
 
@@ -114,8 +107,18 @@ const Header = () => (
                 </ul>
             </div>
 
-            <div className="navbar-end">
+            <div className="navbar-end gap-2">
                 <ThemeSwitch />
+
+                {/* <Link href="/agent" className="btn btn-ghost rounded-full pl-1">
+                    <div className="avatar size-8 avatar-placeholder">
+                        <div className="bg-primary text-gray-900 w-16 rounded-full">
+                            <span className="text-lg">Jo</span>
+                        </div>
+                    </div>
+
+                    <p className="max-w-20 truncate">John 117</p>
+                </Link> */}
             </div>
         </nav>
     </header>
